@@ -8,6 +8,11 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `Art Bachmann' portfolio-resume`,
+    description: `Gatsby site with Material-UI`,
+    author: `@artbachmann`,
+  },
   plugins: [
     `gatsby-plugin-sharp`,
     {
@@ -53,6 +58,26 @@ module.exports = {
         rule: {
           include: /\.inline\.svg$/, // See below to configure properly
         },
+      },
+    },
+
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Teko',
+            variants: ['200', '400', '500', '600', '700'],
+          },
+          {
+            family: 'Proza Libre',
+            variants: ['400', '500', '600', '700'],
+          },
+          {
+            family: 'Open Sans',
+            variants: ['200', '400', '500', '600', '700'],
+          },
+        ],
       },
     },
     `gatsby-plugin-netlify-cache`,
