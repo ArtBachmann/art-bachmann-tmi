@@ -5,16 +5,16 @@ export default [
   },
   {
     path: "/skills",
-    text: "OSAAMINEN"
+    text: "OMINAISUUDET"
   },
   {
     path: "/resume",
-    text: "ANSIOLUETTELU"
+    text: "RATKAISUT"
   },
-  {
-    path: "/blog",
-    text: "BLOGI"
-  },
+  // {
+  //   path: "/blog",
+  //   text: "OSAAMINEN"
+  // },
   {
     path: "/contact",
     text: "YHTEYSTIEDOT"
