@@ -1,12 +1,12 @@
 import React from 'react'
-import InfoBlock from './InfoBlock'
+import LandingBlock from './LandingBlock'
 import Revolution from './Revolution'
 
 
 const LandingPage = () => {
   return (
     <div>
-      <InfoBlock />
+      <LandingBlock />
       <Revolution />
     </div>
   )

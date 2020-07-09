@@ -1,8 +1,10 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import Header from './Header'
+import Navbar from './Navbar'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import { makeStyles } from '@material-ui/styles'
+import Typography from '@material-ui/core/Typography'
 
 function ElevationScroll(props) {
   const { children } = props
@@ -16,16 +18,30 @@ function ElevationScroll(props) {
   })
 }
 
-const HeaderMaterial = (propas) => {
+const useStyles = makeStyles(theme => ({
+  toolbarMargin: {
+    ...theme.mixins.toolbar
+  }
+}))
+
+const HeaderMaterial = (props) => {
+  const classes = useStyles()
   return (
-    <ElevationScroll>
-      <AppBar position='fixed'>
-        <Toolbar>
-          <h3>Headless WP</h3>
-          <Header />
-        </Toolbar>
-      </AppBar>
-    </ElevationScroll>
+    <>
+      <ElevationScroll>
+        <AppBar position='fixed'>
+          <Toolbar disableGutters>
+            <Typography variant='h2'
+              style={{ margin: '0.6em' }}
+            >
+              Headless Wordpress
+            </Typography>
+            <Navbar />
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <div className={classes.toolbarMargin} />
+    </>
   )
 }
 

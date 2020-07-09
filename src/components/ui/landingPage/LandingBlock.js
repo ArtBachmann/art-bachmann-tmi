@@ -8,6 +8,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import infoBackground from '../../../assets/images/3d-background.jpg'
 import wordpressgatsbyLogo from '../../../assets/images/GatsbyWordpressLogos Rounded.png'
+import devices from '../../../assets/images/cmsdevices.png'
 
 import ButtonArrow from '../../original'
 
@@ -85,6 +86,10 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 0
     }
   },
+  devices: {
+    margin: '3em',
+    width: '26em'
+  }
 }))
 
 const InfoBlock = () => {
@@ -97,7 +102,7 @@ const InfoBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: '50em' }}
+      style={{ height: '100vh' }}
       justify='center'
       alignItems='center'
       className={classes.infoBackground}>
@@ -110,9 +115,19 @@ const InfoBlock = () => {
         style={{ maxWidth: matchesSM ? 300 : '60em', paddingTop: '4em' }}>
 
         <Typography variant='h1' align='center' >
-
-          Headless WordPress: Miksi Gatsbyn pitäisi olla seuraava luettelossasi
+          Yksi sisällönhallintajärjestelmä,
+          useita etusivuja. Päättömään CMS: ään tallennetut tiedot ovat
+          käytettävissä näytölle missä tahansa yhteydessä
         </Typography>
+      </Grid>
+
+      <Grid item
+        container
+        justify='center'
+      >
+        <img alt='possible devices for headless wordpress'
+          src={devices}
+          className={classes.devices} />
       </Grid>
 
 
@@ -155,7 +170,7 @@ const InfoBlock = () => {
                     variant='contained'
                     className={classes.estimateButton}
                   >
-                    Free Estimate
+                    Ilmainen Arvio
                   </Button>
                 </Grid>
 
@@ -167,7 +182,7 @@ const InfoBlock = () => {
                       variant='outlined'
                       className={classes.learnButtonHero}
                     >
-                      <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Learn More</span>
+                      <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
                       <ButtonArrow
                         width={15}
                         height={15}
