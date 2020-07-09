@@ -116,8 +116,8 @@ export default createMuiTheme({
       fontFamily: 'Open Sans',
       color: grey5,
       fontWeight: 500,
-      fontSize: '1.2rem',
-      lineHeight: 1.2
+      fontSize: '1.1rem',
+      lineHeight: 1.4
     },
     subtitle2: {
       fontFamily: 'Open Sans',
