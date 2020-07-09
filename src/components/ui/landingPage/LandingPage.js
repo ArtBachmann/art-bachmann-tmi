@@ -1,15 +1,17 @@
 import React from 'react'
 import LandingBlock from './LandingBlock'
-import Revolution from './Revolution'
+import RevolutionBlock from './RevolutionkBlock'
 
 
 const LandingPage = () => {
   return (
     <div>
       <LandingBlock />
-      <Revolution />
+      <RevolutionBlock />
     </div>
   )
 }
 
 export default LandingPage
+
+// edefef

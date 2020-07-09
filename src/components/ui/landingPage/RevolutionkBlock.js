@@ -20,10 +20,10 @@ const useStyles = makeStyles(theme => ({
   },
   learnButtonHero: {
     ...theme.typography.learnButton,
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     fontWeight: 500,
     height: 45,
-    width: 145,
+    width: 200,
     '&:hover': {
       backgroundColor: theme.palette.common.grey1,
     }
@@ -57,26 +57,59 @@ const Revolution = () => {
   const theme = useTheme()
   return (
     <Grid container
-      style={{ height: '75em', marginTop: '8em' }}
+      style={{ height: '55em', marginTop: '2em' }}
       alignItems='center'
       justify='center'>
       <Card className={classes.revolutionCard}>
         <CardContent>
           <Grid container
             direction='column'
-            style={{ textAlign: 'center' }}>
+          >
             <Grid item>
-              <Typography variant='h3'
+              <Typography variant='h2'
                 gutterBottom>
-                The Revolution
+                Päättömän WordPressin käytön edut:
                 </Typography>
             </Grid>
-            <Grid item>
-              <Typography variant='subtitle1'
-                gutterBottom>
-                Visionary insights coupled with cutting-edge technology
-                is a recipe for a revolution.
+            <Grid item container
+              direction='column'
+              justify='flex-start'
+            >
+              <Grid item>
+                <Typography variant='subtitle1'
+                  gutterBottom>
+                  # Monikanavainen sisällönjulkaisu
                 </Typography>
+              </Grid>
+
+              <Grid item>
+                <Typography variant='subtitle1'
+                  gutterBottom>
+                  # Enemmän kevyitä ja yksinkertaisempia uudelleensuunnitteluja
+
+                </Typography>
+              </Grid>
+
+              <Grid item>
+                <Typography variant='subtitle1'
+                  gutterBottom>
+                  # Erittäin nopea suorituskyky
+                </Typography>
+              </Grid>
+
+              <Grid item>
+                <Typography variant='subtitle1'
+                  gutterBottom>
+                  #Parempi skaalautuvuus
+                </Typography>
+              </Grid>
+
+              <Grid item>
+                <Typography variant='subtitle1'
+                  gutterBottom>
+                  # Monikanavainen sisällönjulkaisu
+                </Typography>
+              </Grid>
               <Button
                 variant='outlined'
                 className={classes.learnButtonHero}

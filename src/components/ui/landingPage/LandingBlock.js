@@ -154,7 +154,7 @@ const InfoBlock = () => {
             >
               <Typography align='center' variant='body1' >
                 <Typography align='center' variant='body1' >
-                  Gatsby on hieno tapa luoda staattinen sivusto React.js: n avulla. Tämän lisäksi yksi Gatsbyn tappajaominaisuuksista on, että se voi tuoda sisältöä monista eri lähteistä, mukaan lukien WordPress-sivustosi...
+                  Gatsby on hieno tapa luoda staattinen sivusto React.js:n avulla. Tämän lisäksi yksi Gatsbyn tappajaominaisuuksista on, että se voi tuoda sisältöä monista eri lähteistä, mukaan lukien WordPress-sivustosi...
             </Typography>
               </Typography>
               <Typography align='center' variant='body1' >
