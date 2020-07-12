@@ -4,11 +4,11 @@ export default [
     text: "ETUSIVU"
   },
   {
-    path: "/benefits",
+    path: "/ominaisuudet",
     text: "OMINAISUUDET"
   },
   {
-    path: "/resume",
+    path: "/ratkaisut",
     text: "RATKAISUT"
   },
 
@@ -18,7 +18,7 @@ export default [
   // },
 
   {
-    path: "/contact",
+    path: "/yhteystiedot",
     text: "YHTEYSTIEDOT"
   },
 ]

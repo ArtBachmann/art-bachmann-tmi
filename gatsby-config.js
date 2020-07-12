@@ -1,11 +1,3 @@
-require("dotenv").config({
-  path: `.env.GATSBY_CONCURRENT_DOWNLOAD`,
-})
-
-// require .env.development or .env.production
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
 
 module.exports = {
   siteMetadata: {
@@ -15,6 +7,10 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,42 +19,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
-        verbose: true,
-        develop: {
-          hardCacheMediaFiles: true,
-        },
-        debug: {
-          graphql: {
-            writeQueriesToDisk: true,
-          },
-        },
-        type: {
-          Post: {
-            limit:
-              process.env.NODE_ENV === `development`
-                ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                50
-                : // and we don't actually need more than 5000 in production for this particular site
-                5000,
-          },
-        },
-      },
-    },
-    `gatsby-plugin-chakra-ui`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-material-ui`,
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /\.inline\.svg$/, // See below to configure properly
-        },
-      },
+        typeName: 'WordPress',
+        fieldName: 'wordPress',
+        url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
+        refetchInterval: 60
+      }
     },
 
     {
@@ -80,7 +47,5 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-transition-link`,
-    `gatsby-plugin-netlify-cache`,
   ],
 }
