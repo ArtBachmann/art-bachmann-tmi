@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   GraphQLBackground: {
-    backgroundColor: '#f9f7f7',
+    backgroundColor: '#FFFFFF',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',

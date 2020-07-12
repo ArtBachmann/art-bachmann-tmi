@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-import infoBackground from '../../../assets/images/3d-background.jpg'
+import infoBackground from '../../../assets/images/3d-background-light.jpg'
 import wordpressgatsbyLogo from '../../../assets/images/GatsbyWordpressLogos Rounded.png'
-import devices from '../../../assets/images/cmsdevices.png'
+import devices from '../../../assets/images/multipledevices.png'
 
 import ButtonArrow from '../../original'
 
@@ -87,8 +87,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   devices: {
-    margin: '3em',
-    width: '26em'
+    margin: '2em',
+    width: '20em'
   }
 }))
 
@@ -112,7 +112,7 @@ const LandingBlock = () => {
       <Grid item container
         justify='center'
         className={classes.rowContainer}
-        style={{ maxWidth: matchesSM ? 300 : '60em', paddingTop: '4em' }}>
+        style={{ maxWidth: matchesSM ? 300 : '60em', paddingTop: '3em' }}>
 
         <Typography variant='h1' align='center' >
           Yksi sisällönhallintajärjestelmä,
@@ -135,7 +135,7 @@ const LandingBlock = () => {
         container
         style={{
           textAlign: matchesXS ? 'center' : 'inherit',
-          marginBottom: '8em'
+          marginBottom: '6em'
         }}
         direction={matchesXS ? 'column' : 'row'}
         spacing={matchesXS ? 8 : 'inherit'}>

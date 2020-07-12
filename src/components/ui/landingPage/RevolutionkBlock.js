@@ -6,7 +6,7 @@ import ButtonArrow from '../../original'
 import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import revolutionBackground from '../../../assets/svg/Pattern-Randomized.svg'
+import revolutionBackground from '../../../assets/images/3d-background-light.jpg'
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {

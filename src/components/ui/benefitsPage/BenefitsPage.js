@@ -7,7 +7,15 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-import multichannel from '../../../assets/images/multichannel.png'
+import multichannel from '../../../assets/images/multipleCMS.png'
+
+import CachedIcon from '@material-ui/icons/Cached';
+import CloudDoneIcon from '@material-ui/icons/CloudDone';
+import CropRotateIcon from '@material-ui/icons/CropRotate';
+import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
+import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
+import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
+import FlashOnIcon from '@material-ui/icons/FlashOn';
 
 
 const useStyles = makeStyles(theme => ({
@@ -80,48 +88,52 @@ const Services = () => {
     <Grid container
       direction='column'
       className={classes.mainContainer}>
-      <Grid item>
+
+      <Grid item
+        container
+        justify='center'>
         <Typography
-          align={matchesSM ? 'center' : undefined}
           style={{
-            marginLeft: matchesSM ? 0 : '5em',
-            textAlign: matchesSM ? 'center' : undefined,
-            marginTop: '3em',
-            marginBottom: '1em'
+            marginTop: matchesSM ? '1em' : '3em',
+            maxWidth: '55%',
+            textAlign: 'center'
           }}
           variant='h1'
           gutterBottom>
-          Päättömän WordPressin käytön edut:
-        </Typography>
-        <Typography
-          align={matchesSM ? 'center' : undefined}
-          style={{
-            marginLeft: matchesSM ? 0 : '5em',
-            maxWidth: '70%',
-            textAlign: matchesSM ? 'center' : undefined
-          }}
-          variant='h5'
-          gutterBottom>
-          WordPressin käyttäminen Headless CMS -laitteena tarjoaa useita etuja yrityksille, kehittäjille, verkkosivustojen omistajille ja mukaan lukien loppukäyttäjille.
+          WordPressin käyttäminen Headless CMS-laitteena tarjoaa useita etuja yrityksille, verkkosivustojen omistajille seka loppukäyttäjille.
         </Typography>
       </Grid>
-      <Grid item>
 
-        {/* # Monikanavainen sisällönjulkaisu*/}
+
+
+      {/* Starting Benefits blocks */}
+      {/* # Monikanavainen sisällönjulkaisu*/}
+      <Grid item>
         <Grid container
           direction='row'
           className={classes.serviceContainer}
-          justify={matchesSM ? 'center' : 'center'}
+          justify='center'
           style={{
             marginTop: matchesSM ? '1em' : '8em'
           }}>
 
-          <Grid item
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <DevicesOtherIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
+            />
+          </Grid>
+
+          <Grid item md
             style={{
-              textAlign: matchesSM ? 'center' : undefined,
-              width: matchesSM ? undefined : '35em',
-              marginRight: '3em'
-            }} >
+              marginLeft: matchesSM ? 0 : '5em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
+              textAlign: matchesSM ? 'center' : undefined
+            }}>
+
             <Typography variant='h4'>
               # Monikanavainen sisällönjulkaisu
               </Typography>
@@ -129,33 +141,22 @@ const Services = () => {
               Yksi päättömän arkkitehtuurin käyttämisen merkittävimmistä eduista on, että sinulla on joustavuus julkaista sisältöäsi automaattisesti useilla kanavilla samanaikaisesti.
             </Typography>
             <Typography variant='subtitle1'>
-              {/* Integrate your web experience or create standalone {' '}
-
-              application{matchesSM ? null : <br />} with either  <span className={classes.specialText}>mobile platform.</span> */}
               Static WordPressissä on keskitetty sisällönhallintajärjestelmä, joten sinun ei tarvitse huolehtia sisällön alustamisesta uudelleen jokaiselle alustalle. Sen sijaan sinun täytyy julkaista sisältö vain kerran, ja Headless-arkkitehtuuri hoitaa kaikki jalkatyöt puolestasi.
             </Typography>
           </Grid>
-          <Grid item
-            style={{ marginRight: matchesSM ? 0 : '5em' }}>
-            <img
-              className={classes.icon}
-              alt='mobile phone icon'
-              src={multichannel}
-              width='350em'
-            />
-          </Grid>
         </Grid>
 
-        {/* Custom Software Development */}
+        {/* Enemmän kevyitä ja yksinkertaisempia uudelleensuunnitteluja */}
         <Grid container
           direction='row'
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : undefined}>
 
-          <Grid item
+          <Grid item md
             style={{
               marginLeft: matchesSM ? 0 : '5em',
-              width: matchesSM ? undefined : '35em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
               textAlign: matchesSM ? 'center' : undefined
             }}>
 
@@ -172,14 +173,15 @@ const Services = () => {
               Siten se johtaa lopulta tyylikkään, nopeaan ja reagoivaan sisällön toimittamiseen.
             </Typography>
           </Grid>
-          {/* <Grid item>
-            <img
-              className={classes.icon}
-              alt='custom software icon'
-              src={customSoftwareIcon}
-              width='250em'
+
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <CropRotateIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
             />
-          </Grid> */}
+          </Grid>
         </Grid>
 
         {/* Erittäin nopea suorituskyky */}
@@ -187,11 +189,23 @@ const Services = () => {
           direction='row'
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : 'flex-end'}>
-          <Grid item
+
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <DirectionsRunIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
+
+            />
+          </Grid>
+
+          <Grid item md
             style={{
-              textAlign: matchesSM ? 'center' : undefined,
-              width: matchesSM ? undefined : '35em',
-              marginRight: '3em'
+              marginLeft: matchesSM ? 0 : '5em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
+              textAlign: matchesSM ? 'center' : undefined
             }}>
 
             <Typography variant='h4'>
@@ -207,14 +221,6 @@ const Services = () => {
               Headless WordPress -sovellukseen jää vain sisältötietokanta ja API-puhelut, jolloin WordPress-sivustosi latautuu valon nopeudella, ¬¬ jopa jos julkaiset sisällön staattisella sivustolla.
             </Typography>
           </Grid>
-          {/* <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
-            <img
-              className={classes.icon}
-              alt='custom websit icon'
-              src={websitesIcon}
-              width='250em'
-            />
-          </Grid> */}
         </Grid>
 
         {/* #Parempi skaalautuvuus */}
@@ -224,10 +230,11 @@ const Services = () => {
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : undefined}>
 
-          <Grid item
+          <Grid item md
             style={{
               marginLeft: matchesSM ? 0 : '5em',
-              width: matchesSM ? undefined : '35em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
               textAlign: matchesSM ? 'center' : undefined
             }}>
 
@@ -244,14 +251,15 @@ const Services = () => {
               Sisältötietokannasi voi kasvaa edelleen, ja koska olet nyt API-ensisijainen, voit integroitua helposti mihin tahansa muuhun tekniikkaan vastaamaan uusia yritystarpeitasi.
             </Typography>
           </Grid>
-          {/* <Grid item>
-            <img
-              className={classes.icon}
-              alt='custom software icon'
-              src={customSoftwareIcon}
-              width='250em'
+
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <CachedIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
             />
-          </Grid> */}
+          </Grid>
         </Grid>
 
 
@@ -260,13 +268,23 @@ const Services = () => {
           direction='row'
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : 'flex-end'}>
-          <Grid item
-            style={{
-              textAlign: matchesSM ? 'center' : undefined,
-              width: matchesSM ? undefined : '35em',
-              marginRight: '3em'
-            }}>
 
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <CloudDoneIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
+            />
+          </Grid>
+
+          <Grid item md
+            style={{
+              marginLeft: matchesSM ? 0 : '5em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
+              textAlign: matchesSM ? 'center' : undefined
+            }}>
             <Typography variant='h4'>
               # Tiukempi turvallisuus
               </Typography>
@@ -280,14 +298,6 @@ const Services = () => {
               Erottamalla käyttöliittymä taustasta, et jätä hakkereille mitään hyväksikäyttöön tai murtautumiseen, koska sisältösi elää erillään käyttöliittymästä.
             </Typography>
           </Grid>
-          {/* <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
-            <img
-              className={classes.icon}
-              alt='custom websit icon'
-              src={websitesIcon}
-              width='250em'
-            />
-          </Grid> */}
         </Grid>
 
 
@@ -297,15 +307,16 @@ const Services = () => {
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : undefined}>
 
-          <Grid item
+          <Grid item md
             style={{
               marginLeft: matchesSM ? 0 : '5em',
-              width: matchesSM ? undefined : '35em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
               textAlign: matchesSM ? 'center' : undefined
             }}>
 
             <Typography variant='h4'>
-              #Nämmittimen hallinta
+              #Parempaa hallintaa
               </Typography>
             <Typography variant='subtitle1' className={classes.subtitle}>
               Headless WordPress antaa sinulle täyden hallinnan sisällön visualisoinnista riippumatta siitä, oletko käyttöliittymän kehittäjä tai sisällönjulkaisija.
@@ -314,14 +325,16 @@ const Services = () => {
               Kun kustantajat saavat melkein loputtoman hallinnan siitä, kuinka he esittävät sisältöään käyttäjille, käyttöliittymien kehittämisen asiantuntijat voivat hyödyntää erilaisia tekniikoita tarjotakseen käyttäjille teeman ulkopuolella olevan kokemuksen.
             </Typography>
           </Grid>
-          {/* <Grid item>
-            <img
-              className={classes.icon}
-              alt='custom software icon'
-              src={customSoftwareIcon}
-              width='250em'
+
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <DeveloperModeIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
             />
-          </Grid> */}
+          </Grid>
+
         </Grid>
 
         {/* #Future-Proof Tech Stack */}
@@ -329,12 +342,22 @@ const Services = () => {
           direction='row'
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : 'flex-end'}>
-          <Grid item
+
+          <Grid item container
+            justify='center'
+            alignItems='center'
+            md>
+            <DevicesOtherIcon
+              style={{ fontSize: 320, color: '#a5c0ad' }}
+            />
+          </Grid>
+
+          <Grid item md
             style={{
-              textAlign: matchesSM ? 'center' : undefined,
-              width: matchesSM ? undefined : '35em',
-              marginRight: '3em',
-              marginBottom: '4em'
+              marginLeft: matchesSM ? 0 : '5em',
+              marginRight: matchesSM ? 0 : '5em',
+              maxWidth: matchesSM ? undefined : '35em',
+              textAlign: matchesSM ? 'center' : undefined
             }}>
 
             <Typography variant='h4'>
@@ -350,19 +373,9 @@ const Services = () => {
               Lisäksi, koska Static WordPress on API-ensisijainen, se voi tukea suosittuja huipputeknologioita ja laitteita, kuten AR, VR ja IoT, mikä antaa sinulle merkittävän etulyöntiaseman kilpailijoihisi nähden.
             </Typography>
           </Grid>
-          {/* <Grid item style={{ marginRight: matchesSM ? 0 : '5em' }}>
-            <img
-              className={classes.icon}
-              alt='custom websit icon'
-              src={websitesIcon}
-              width='250em'
-            />
-          </Grid> */}
         </Grid>
-
-
       </Grid>
-    </Grid >
+    </Grid>
   )
 }
 
