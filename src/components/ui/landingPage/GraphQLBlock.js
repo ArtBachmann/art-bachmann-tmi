@@ -5,10 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-
-import infoBackground from '../../../assets/images/3d-background.jpg'
-import wordpressgatsbyLogo from '../../../assets/images/GatsbyWordpressLogos Rounded.png'
-import devices from '../../../assets/images/cmsdevices.png'
+import GraphQLLogo from '../../../assets/images/Graphql-transparent.png'
 
 import ButtonArrow from '../../original'
 
@@ -30,8 +27,8 @@ const useStyles = makeStyles(theme => ({
       paddingRight: '1.2em',
     }
   },
-  infoBackground: {
-    backgroundImage: `url(${infoBackground})`,
+  GraphQLBackground: {
+    backgroundColor: '#f9f7f7',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -92,7 +89,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const LandingBlock = () => {
+const GraphQLBlock = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'))
@@ -102,45 +99,44 @@ const LandingBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: '100vh' }}
+      style={{ height: '30em' }}
       justify='center'
       alignItems='center'
-      className={classes.infoBackground}>
-
-      {/* Headign */}
-
-      <Grid item container
-        justify='center'
-        className={classes.rowContainer}
-        style={{ maxWidth: matchesSM ? 300 : '60em', paddingTop: '4em' }}>
-
-        <Typography variant='h1' align='center' >
-          Yksi sisällönhallintajärjestelmä,
-          useita etusivuja. Päättömään CMS: ään tallennetut tiedot ovat
-          käytettävissä näytölle missä tahansa yhteydessä
-        </Typography>
-      </Grid>
-
-      <Grid item
-        container
-        justify='center'
-      >
-        <img alt='possible devices for headless wordpress'
-          src={devices}
-          className={classes.devices} />
-      </Grid>
-
+      className={classes.GraphQLBackground}>
 
       <Grid item
         container
         style={{
-          textAlign: matchesXS ? 'center' : 'inherit',
-          marginBottom: '8em'
+          textAlign: matchesXS ? 'center' : 'inherit'
         }}
         direction={matchesXS ? 'column' : 'row'}
         spacing={matchesXS ? 8 : 'inherit'}>
 
-        {/* Left side text block */}
+        {/* Left side Logo block */}
+        <Grid item
+          sm
+          className={classes.logos}
+        >
+          <Grid container
+            justify='center'
+            alignItems='center'
+            direction='row'>
+
+            <img
+              alt='graphql logo'
+              src={GraphQLLogo}
+              style={{
+                height: '12em',
+                maxWidth: matchesSM ? 300 : '40em',
+                marginRight: matchesMD ? 0 : '3em',
+                marginBottom: matchesMD ? '5em' : 0
+              }}
+            />
+          </Grid>
+        </Grid>
+
+        {/* Right side text block */}
+
         <Grid item
           sm
           style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
@@ -160,71 +156,31 @@ const LandingBlock = () => {
               <Typography align='center' variant='body1' >
                 gatsby on nopea kaikella tavalla, jolla on merkitystä
             </Typography>
-              <Grid container
-                justify='center'
-                direction='row'
-                className={classes.buttonContainer}
-              >
-                <Grid item>
+
+              <Grid item>
+                <Link to={'/estimate/'}>
                   <Button
-                    variant='contained'
-                    className={classes.estimateButton}
+                    underlineNone
+                    variant='outlined'
+                    className={classes.learnButtonHero}
                   >
-                    Ilmainen Arvio
+                    <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
+                    <ButtonArrow
+                      width={15}
+                      height={15}
+                      fill={theme.palette.common.Grey4}
+                    />
                   </Button>
-                </Grid>
-
-
-                <Grid item>
-                  <Link to={'/estimate/'}>
-                    <Button
-                      underlineNone
-                      variant='outlined'
-                      className={classes.learnButtonHero}
-                    >
-                      <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
-                      <ButtonArrow
-                        width={15}
-                        height={15}
-                        fill={theme.palette.common.Grey4}
-                      />
-                    </Button>
-                  </Link>
-                </Grid>
-
+                </Link>
               </Grid>
             </Grid>
-
-          </Grid>
-        </Grid>
-
-
-        {/* Right side Logos block */}
-        <Grid item
-          sm
-          className={classes.logos}
-        >
-          <Grid container
-            justify='center'
-            alignItems='center'
-            direction='row'>
-
-            <img
-              alt='wordpress gatsby logo'
-              src={wordpressgatsbyLogo}
-              style={{
-                height: '12em',
-                maxWidth: matchesSM ? 300 : '40em',
-                marginRight: matchesMD ? 0 : '3em',
-                marginBottom: matchesMD ? '5em' : 0
-              }}
-            />
           </Grid>
         </Grid>
       </Grid>
     </Grid>
 
+
   )
 }
 
-export default LandingBlock
+export default GraphQLBlock

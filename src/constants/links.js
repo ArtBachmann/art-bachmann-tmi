@@ -14,7 +14,7 @@ export default [
 
   // {
   //   path: "/blog",
-  //   text: "OSAAMINEN"
+  //   text: "TIETOPANKKI"
   // },
 
   {
