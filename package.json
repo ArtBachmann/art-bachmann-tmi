@@ -3,7 +3,7 @@
   "private": true,
   "description": "A Gatsby site about my personal knoledge base ",
   "version": "0.1.0",
-  "author": "Dominic Abela <djmabela@gmail.com>",
+  "author": "artbachmann",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.2.0",
@@ -39,24 +39,12 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "proxy": "http://localhost:8000",
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui"
-  },
-  "bugs": {
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui/issues"
+    "serve": "gatsby clean && gatsby build && gatsby serve"
   }
 }
