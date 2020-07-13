@@ -1,11 +1,10 @@
 import React from 'react'
-
 import Layout from '../components/Layout'
-
+import SolutionsPage from '../components/ui/solutionsPage/SolutionsPage'
 
 const IndexPage = () => (
   <Layout>
-    <h4>This is the "ratkaisut sivu"</h4>
+    <SolutionsPage />
   </Layout>
 )
 

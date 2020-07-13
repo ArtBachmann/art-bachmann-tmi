@@ -8,7 +8,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import infoBackground from '../../../assets/images/3d-background-light.jpg'
 import wordpressgatsbyLogo from '../../../assets/images/GatsbyWordpressLogos Rounded.png'
-import devices from '../../../assets/images/multipledevices.png'
+import devices from '../../../assets/images/multiple-devices-cms.png'
 
 import ButtonArrow from '../../original'
 
