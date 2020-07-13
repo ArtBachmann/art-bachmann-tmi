@@ -16,6 +16,7 @@ import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
 import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
+import HttpsIcon from '@material-ui/icons/Https';
 
 
 const useStyles = makeStyles(theme => ({
@@ -273,7 +274,7 @@ const Services = () => {
             justify='center'
             alignItems='center'
             md>
-            <CloudDoneIcon
+            <HttpsIcon
               style={{ fontSize: 320, color: '#a5c0ad' }}
             />
           </Grid>
@@ -347,7 +348,7 @@ const Services = () => {
             justify='center'
             alignItems='center'
             md>
-            <DevicesOtherIcon
+            <CloudDoneIcon
               style={{ fontSize: 320, color: '#a5c0ad' }}
             />
           </Grid>

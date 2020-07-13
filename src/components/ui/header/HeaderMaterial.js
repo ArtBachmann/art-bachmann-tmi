@@ -32,7 +32,7 @@ const HeaderMaterial = (props) => {
         <AppBar position='fixed'>
           <Toolbar disableGutters>
             <Typography variant='h2'
-              style={{ margin: '0.6em' }}
+              style={{ margin: '0.6em', color: '#607D8B' }}
             >
               Headless Wordpress
             </Typography>
