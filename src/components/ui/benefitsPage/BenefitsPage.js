@@ -1,21 +1,15 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-// import Button from '@material-ui/core/Button'
-// import ButtonArrow from '../../original'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-import multichannel from '../../../assets/images/multipleCMS.png'
 
-import CachedIcon from '@material-ui/icons/Cached';
 import CloudDoneIcon from '@material-ui/icons/CloudDone';
 import CropRotateIcon from '@material-ui/icons/CropRotate';
 import DeveloperModeIcon from '@material-ui/icons/DeveloperMode';
 import DevicesOtherIcon from '@material-ui/icons/DevicesOther';
 import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
-import FlashOnIcon from '@material-ui/icons/FlashOn';
 import HttpsIcon from '@material-ui/icons/Https';
 import DynamicFeedIcon from '@material-ui/icons/DynamicFeed';
 

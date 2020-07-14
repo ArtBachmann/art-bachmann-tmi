@@ -17,6 +17,7 @@ import Snackbar from '@material-ui/core/Snackbar'
 import phoneIcon from '../../../assets/svg/phone.svg'
 import emailIcon from '../../../assets/svg/email.svg'
 import airplane from '../../../assets/svg/send.svg'
+import Art from '../../../assets/images/artbachmann.jpg'
 
 import ButtonArrow from '../../original'
 
@@ -477,6 +478,8 @@ const Contact = (props) => {
         onClose={() => setAlert({ ...alert, open: false })}
         autoHideDuration={4000} />
 
+
+
       {/* Right side column starts */}
 
       <Grid item container
@@ -507,6 +510,18 @@ const Contact = (props) => {
                 style={{ fontSize: '1.4rem', marginBottom: '1.6em' }}>
                 Take advantage of the 21st century.
             </Typography>
+              <Grid item lg>
+                <img
+                  src={Art}
+                  alt="headless wordpress workflow"
+                  style={{
+                    width: '18em',
+                    maxWidth: matchesSM ? 300 : "16em",
+                    marginRight: matchesMD ? 0 : "5em",
+                    marginBottom: matchesMD ? "5em" : 0
+                  }}
+                />
+              </Grid>
               <Grid container item
                 justify={matchesMD ? 'center' : 'undefined'}>
                 <Button
