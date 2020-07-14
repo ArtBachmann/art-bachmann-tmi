@@ -7,12 +7,13 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import WordPressPublishing from '../../../assets/images/multipleCMS.png'
 import JAMstack from '../../../assets/images/jamstack1.png'
+import ACF from '../../../assets/images/ACF-fields example.png'
 
 const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: '8em',
     paddingRight: '8em',
-    paddingTop: '4em',
+    paddingTop: '2em',
     paddingBottom: '2em',
     [theme.breakpoints.down('sm')]: {
       paddingLeft: '1.2em',
@@ -32,460 +33,854 @@ const Revolution = () => {
 
 
   return (
-    <Grid container
-      direction='column'>
+    <Grid container direction="column">
 
-      {/* The Revolution Heading Section */}
-      <Grid item
-        className={classes.rowContainer}>
-        <Typography variant='h1'
-          align={matchesMD ? 'center' : undefined}>
-          Ratkaisut
+      {/* Heading text */}
+      <Grid
+        container
+        item
+        justify='center'
+        style={{ marginTop: matchesMD ? "1em" : "4em" }}
+      >
+        <Typography
+          align='center'
+          style={{ maxWidth: '80%', marginTop: '3em' }}
+          variant="h1"
+        >
+          Tosiasia on, että tietomme rikkautuvat ja rikkaampivat ajan myötä, ja käyttäjien tarve monipuolistuu edelleen, koska ne ovat eri tilanteissa eri laitteilla.
+          Voimme rakentaa tulevaisuuteen nyt käyttämällä WordPressiä päättömänä CMS: nä
         </Typography>
       </Grid>
-      <Grid item>
-        <Typography variant='h6'
-          align='left'
-          paragraph>
-          TULEVAISUUS on (todennäköisesti) päätön
-          Joten mikä tulevaisuus tulee olemaan? Se tulee todennäköisesti päättömäksi. Kuka tietää? Tosiasia on, että tietomme rikkautuvat ja rikkaampivat ajan myötä, ja käyttäjien tarve monipuolistuu edelleen, koska ne ovat eri tilanteissa eri laitteilla.
-          Voimme rakentaa tulevaisuuteen nyt käyttämällä WordPressiä päättömänä CMS: nä.
-            </Typography>
-      </Grid>
 
-      {/* Firs Section (vision) of Revolution Page */}
-      <Grid item container
-        alignItems='center'
-        direction={matchesMD ? 'column' : 'row'}
-        className={classes.rowContainer}>
+
+
+      {/* 1 Section Technology used */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
+        alignItems="center"
+        className={classes.rowContainer}
+        style={{ marginTop: "5em" }}>
 
         <Grid item lg>
-          <img src={WordPressPublishing} alt='wordpress publishing workflow'
+          <img
+            src={WordPressPublishing}
+            alt="headless wordpress workflow"
             style={{
-              width: matchesSM ? 300 : '24em',
-              marginRight: matchesMD ? 0 : '2em',
-              marginBottom: matchesMD ? '5em' : 0
-            }} />
+              width: '26em',
+              maxWidth: matchesSM ? 300 : "24em",
+              marginRight: matchesMD ? 0 : "5em",
+              marginBottom: matchesMD ? "5em" : 0
+            }}
+          />
         </Grid>
-        <Grid item container lg
-          style={{ marginLeft: '3em', maxWidth: '40em' }}
-          direction='column'>
-          <Grid item>
-            <Typography variant='h4'
-              align='left'
-              gutterBottom>
-              Ratkaisut
-            </Typography>
+
+        <Grid item container direction="column" lg style={{ maxWidth: "40em" }}>
+          <Grid item lg>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="h4"
+              gutterBottom
+            >
+              Kaytetty teknologia
+              </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='body1'
-              align='left'
-              paragraph>
-              Vaikka voit edelleen käyttää WordPress-taustajärjestelmää julkaisemiseen, REST-sovellusliittymä antaa sinulle vapauden valita suosikkikehyksesi käyttöliittymäsuunnittelua varten. Se voi olla ReactJS, VueJS, Gatsby tai jokin viela olematon muu kokonaan.
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              align='left'
-              paragraph>
-              Tästä lähestymistavasta voi hyötyä monentyyppisissä hankkeissa. Esimerkiksi esityssivustot tai sivustot, jotka käyttävät WordPressiä taustakuvana, ovat tärkeimmät ehdokkaat irrotettuun lähestymistapaan.
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              align='left'
-              paragraph>
-              Kun erotat etusivusi taustasta, on helpompaa suunnitella se tulevaisuudessa muuttamatta CMS: ää. Lisäksi käyttöliittymäkehittäjien on vain huolehdittava siitä, mitä tehdä taustaohjelman heille tarjoamiin tietoihin. Tämän avulla he voivat olla luovia ja käyttää moderneja kirjastoja, kuten ReactJS, Vue tai Angular, erittäin dynaamisten verkkosovellusten toimittamiseen. Esimerkiksi progressiivisen verkkosovelluksen rakentaminen on helpompaa, kun käytetään edellä mainittuja kirjastoja.
-            </Typography>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              The rise of computers, and subsequently the Internet, has
+              completely altered every aspect of human life. This has increased
+              our comfort, broadened our connections, and reshaped how we view
+              the world.
+              </Typography>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              What once was confined to huge rooms and teams of engineers now
+              resides in every single one of our hands. Harnessing this
+              unlimited potential by using it to solve problems and better lives
+              is at the heart of everything we do.
+              </Typography>
           </Grid>
         </Grid>
       </Grid>
 
-      {/* Second Section (Technology) of Revolution Page */}
-      <Grid item container
-        alignItems='center'
-        direction={matchesMD ? 'column' : 'row'}
-        className={classes.rowContainer}>
-        <Grid item container lg
-          style={{ marginLeft: '3em', maxWidth: '40em' }}
-          direction='column'>
-          <Grid item>
-            <Typography variant='h4'
-              gutterBottom>
-              Technology
-            </Typography>
+
+      {/*2. section: Advanced Custom Fields */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
+        alignItems="center"
+        className={classes.rowContainer}
+        style={{ marginTop: "5em" }}>
+
+
+        <Grid item container direction="column" lg style={{ maxWidth: "40em" }}>
+          <Grid item lg>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="h4"
+              gutterBottom
+            >
+              Advanced Custom Fields
+              </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='body1'
-              paragraph>
-              TULEVAISUUS on (todennäköisesti) päätön
-              Joten mikä tulevaisuus tulee olemaan? Se tulee todennäköisesti päättömäksi. Kuka tietää? Tosiasia on, että tietomme rikkautuvat ja rikkaampivat ajan myötä, ja käyttäjien tarve monipuolistuu edelleen, koska ne ovat eri tilanteissa eri laitteilla.
-              Voimme rakentaa tulevaisuuteen nyt käyttämällä WordPressiä päättömänä CMS: nä.
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              paragraph>
-              No, she'll probably make me do it. Who are you, my warranty?! Noooooo! Your best is an idiot! Why am I sticky and naked? Did I miss something fun? Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff!
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              paragraph>
-              Um, is this the boring, peaceful kind of taking to the streets? Oh, I think we should just stay friends. Meh. Who's brave enough to fly into something we all keep calling a death sphere? You can crush me but you can't crush my spirit!
-            </Typography>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              The rise of computers, and subsequently the Internet, has
+              completely altered every aspect of human life. This has increased
+              our comfort, broadened our connections, and reshaped how we view
+              the world.
+              </Typography>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              What once was confined to huge rooms and teams of engineers now
+              resides in every single one of our hands. Harnessing this
+              unlimited potential by using it to solve problems and better lives
+              is at the heart of everything we do.
+              </Typography>
           </Grid>
         </Grid>
-        <Grid item container
-          justify={matchesMD ? 'center' : 'flex-end'} lg>
-          <img src={JAMstack}
-            style={{ maxWidth: '22em', margin: 0 }}
+        <Grid
+          item
+          container
+          justify='space-around'
+          lg>
+          <img
+            src={ACF}
+            alt="advanced custom fields explanation"
+            style={{
+              width: '32em',
+              maxWidth: matchesSM ? 300 : "32em",
+              marginLeft: matchesMD ? 0 : "5em",
+              marginBottom: matchesMD ? "5em" : 0
+            }}
           />
         </Grid>
       </Grid>
 
-      {/* Process Sections Start */}
-      <Grid item container
+
+      {/* Custom Post Types */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
+        alignItems="center"
         className={classes.rowContainer}
-        direction='row'
-        justify='center'>
+        style={{ marginTop: "5em" }}
+      >
+        <Grid item lg>
+          <img
+            src={WordPressPublishing}
+            alt="mountain through binoculars"
+            style={{
+              width: '26em',
+              maxWidth: matchesSM ? 300 : "24em",
+              marginRight: matchesMD ? 0 : "5em",
+              marginBottom: matchesMD ? "5em" : 0
+            }}
+          />
+        </Grid>
+        <Grid item container direction="column" lg style={{ maxWidth: "40em" }}>
+          <Grid item>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="h4"
+              gutterBottom
+            >
+              Custom Post Types
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              The rise of computers, and subsequently the Internet, has
+              completely altered every aspect of human life. This has increased
+              our comfort, broadened our connections, and reshaped how we view
+              the world.
+            </Typography>
+            <Typography
+              align={matchesMD ? "center" : "left"}
+              variant="body1"
+              paragraph
+            >
+              What once was confined to huge rooms and teams of engineers now
+              resides in every single one of our hands. Harnessing this
+              unlimited potential by using it to solve problems and better lives
+              is at the heart of everything we do.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+
+
+      {/* Client Blocks start */}
+      <Grid
+        item
+        container
+        direction="row"
+        justify="center"
+        className={classes.rowContainer} >
+
         <Grid item>
-          <Typography variant='h4'
-            gutterBottom>
-            Process
+          <Typography variant="h4" gutterBottom>
+            Protsessi
           </Typography>
         </Grid>
       </Grid>
 
-      {/* Consultation Section */}
-      <Grid item container
+
+      {/* 1. Section Konsultointi */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#a0afb2', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
-              Consultation
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
+              Konsultointi
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              After we settle on the best path forward and decide on a solution
+              to pursue, details like the cost and timeline will be finalized.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Then it’s time for us to start on your minimum viable product.
+              That’s just a fancy term for a mockup, which doesn’t include
+              colors, images, or any other polished design elements, but
+              captures the essential layout structure and functionality.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              This helps us understand and refine the solution itself before
+              getting distracted by specifics and looks.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='handshake'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
-      {/* Mockup Section */}
-      <Grid item container
+
+      {/* 2. Section: Malli */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#009688', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Mockup
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              After we settle on the best path forward and decide on a solution
+              to pursue, details like the cost and timeline will be finalized.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Then it’s time for us to start on your minimum viable product.
+              That’s just a fancy term for a mockup, which doesn’t include
+              colors, images, or any other polished design elements, but
+              captures the essential layout structure and functionality.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              This helps us understand and refine the solution itself before
+              getting distracted by specifics and looks.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='mockup illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
       {/* Review Section */}
-      <Grid item container
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#455A64', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Review
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Before moving any farther we come back to you with our progress. This gives you the freedom to discuss any changes you may want or any ideas you may have come up with before any heavy lifting has been done.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              We give you an interactive demonstration of the mockups, thoroughly explaining the thought process that went into each screen and every anticipated feature.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >Once you’re completely satisfied with the vision for our solution we get down to the nitty gritty, fine-details of design.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='review illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
       {/* Design Section */}
-      <Grid item container
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#512DA8', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Design
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Using the mockups and notes taken during the consultation as guides, we will start ironing out what the final product will look like.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              This also involves using any brand material like fonts, colors, and logos to extend the experience you’re already familiar with.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              No aspect is superfluous, and care will be taken with every decision.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='design illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
-      {/* Build Section */}
-      <Grid item container
+      {/* Build Section
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#FF9800', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : undefined}
+        style={{ backgroundColor: "#FBB03B", height: "90em" }}
+      >
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
+              Review
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              A second round of review is essential to our goal of creating exactly what you want, exactly how you want it.
+            </Typography>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              This time we’ll be going over the finalized designs in another fully interactive demonstration. Again this gives you an opportunity to tweak things and make sure we get everything right the first time.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            alt="building construction site"
+            width="100%"
+            style={{ maxWidth: matchesMD ? 700 : 1000 }}
+          />
+        </Grid>
+      </Grid> */}
+
+
+      {/* Build Section */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
+        className={classes.rowContainer}
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
+          <Grid item>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Build
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Here’s where we get down to business.
+
+              Engineering begins after your approval on the final designs. We start by scaffolding out the project on a high level, prioritizing some areas over others.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
-            </Typography>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Each area is then developed in order of importance until ready to be connected to the next piece.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='build illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
+
       {/* Launch Section */}
-      <Grid item container
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#CDDC39', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Launch
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              The moment we’ve all been waiting for.
+              When construction comes to a close you’re the first one to know. We’ll give our final demonstration to show off your shiny new software in the wild so you know exactly how it will look to your users.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
-            </Typography>
-            <Typography variant='body1'
-              style={{ color: '#000', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              When you say the word, we press the button and launch your project out to the public. We’re there to ensure everything goes to plan so you can start reaping the rewards of your technological investment immediately.
             </Typography>
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='launch illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
+
       {/* Maintain Section */}
-      <Grid item container
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#607D8B', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Maintain
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Our work doesn’t end there.
+              After a successful launch we keep in close contact to listen to feedback and hear how the project is being received.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              From there on out we make sure your application is kept up to date and taking advantage of the best features and practices available
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
-            </Typography>
+
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='maintain illustration'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
 
       {/* Iterate Section */}
-      <Grid item container
+      {/* Maintain Section */}
+      <Grid
+        item
+        container
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        style={{ background: '#303F9F', height: '60em' }}
-        direction='row'
-        justify='center'>
-        <Grid item container lg
-          direction='column'>
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+
+        <Grid
+          item
+          container
+          direction="column"
+          lg
+          justify='center'
+          alignItems={matchesMD ? "center" : 'center'}>
+
+
           <Grid item>
-            <Typography variant='h4'
-              style={{ color: '#000', }}
-              gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+            >
               Iterate
             </Typography>
           </Grid>
-          <Grid item>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              Soon enough. And from now on you're all named Bender Jr. Yes! In your face, Gandhi! You're going to do his laundry? Good news, everyone! There's a report on TV with some very bad news!
+          <Grid
+            item
+            container
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              The cycle repeats whenever you come up with a new idea for extending your current project, or come up with a brand new system entirely.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              No! The kind with looting and maybe starting a few fires! Goodbye, cruel world. Goodbye, cruel lamp. Goodbye, cruel velvet drapes, lined with what would appear to be some sort of cruel muslin and the cute little pom-pom curtain pull cords. Cruel though they may be…
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              By planning for future features and changes we can build and evolve your application over time. As new use cases and customer needs develop we can respond with continuous integration of new content.
             </Typography>
-            <Typography variant='body1'
-              style={{ color: '#fff', maxWidth: '22em' }}
-              paragraph>
-              It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years. And it goes without saying, it caused him to empty his bowels. Aww, it's true. I've been hiding it for so long.
-            </Typography>
+
           </Grid>
         </Grid>
-        <Grid item lg
-          style={{ alignSelf: 'center' }}>
-          <img src={JAMstack}
-            alt='iterate'
-            style={{ maxWidth: '36em', maxHeight: '36em' }} />
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '8em' }}
+          />
         </Grid>
       </Grid>
-    </Grid>
-  )
+    </Grid >
+  );
 }
 
 export default Revolution
