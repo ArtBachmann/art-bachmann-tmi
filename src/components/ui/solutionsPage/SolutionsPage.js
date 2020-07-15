@@ -3,11 +3,12 @@ import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import WordPressPublishing from '../../../assets/images/multipleCMS.png'
 import JAMstack from '../../../assets/images/jamstack1.png'
-import ACF from '../../../assets/images/ACF-fields example.png'
+import ACF from '../../../assets/images/etusivu-acf-fields.png'
 
 const useStyles = makeStyles(theme => ({
   rowContainer: {
@@ -170,6 +171,12 @@ const Revolution = () => {
               marginBottom: matchesMD ? "5em" : 0
             }}
           />
+
+          <Link to='/'>
+            <Typography variant='h6'>
+              Katso iso kuva
+            </Typography>
+          </Link>
         </Grid>
       </Grid>
 
