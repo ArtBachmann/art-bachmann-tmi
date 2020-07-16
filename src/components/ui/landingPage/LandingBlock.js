@@ -152,13 +152,18 @@ const LandingBlock = () => {
             <Grid sm item
               className={classes.heroTextContainer}
             >
-              <Typography align='center' variant='body1' >
-                <Typography align='center' variant='body1' >
-                  Gatsby on hieno tapa luoda staattinen sivusto React.js:n avulla. Tämän lisäksi yksi Gatsbyn huippuominaisuuksista on, että se voi tuoda sisältöä monista eri lähteistä, mukaan lukien WordPress.
+
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}>
+                Voit käyttää "Headless WordPressiä" julkaistaksesi verkkosivustosi sisältöä Facebook-sivullasi, Google My Business -luettelossa tai yrityksesi wikissä. Tämä lähestymistapa on hyödyllinen, jos haluat julkaista sisältösi mobiilisovelluksissa, staattisissa verkkosivustoissa tai edistyneissä verkkosovelluksissa.
             </Typography>
-              </Typography>
-              <Typography align='center' variant='body1' >
-                gatsby on nopea kaikella tavalla, jolla on merkitystä
+
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}
+              >
+                Gatsbyn lisääminen on loistava tapa lisätä nykyaikaisia suorituskykyä, skaalautuvuutta, turvallisuutta ja kehityksen nopeuden etuja samalla kun WordPress tarjoaa tutun sisällön luomisen käyttöliittymän.
             </Typography>
               <Grid container
                 justify='center'

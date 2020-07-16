@@ -115,6 +115,33 @@ const GraphQLBlock = () => {
         {/* Left side Logo block */}
         <Grid item
           sm
+          style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
+
+          <Grid container
+            justify='flex-start'
+            alignItems='center'
+            direction='row'>
+            <Grid sm item
+              className={classes.heroTextContainer}
+            >
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}>
+                GraphQL: n avulla asiakas tekee deklaratiivisia kyselyitä pyytäen tarkat tiedot tarvittavista tiedoista, ja vastauksessa annetaan tarkalleen, mitä pyydettiin, enempää.
+            </Typography>
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}>
+                Tämä antaa asiakkaalle mahdollisuuden hallita sovellustaan ja antaa GraphQL-palvelimen suorittaa tehokkaammin vain hakemalla pyydetyt resurssit.
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* Right side text block */}
+
+        <Grid item
+          sm
           className={classes.logos}
         >
           <Grid container
@@ -132,48 +159,6 @@ const GraphQLBlock = () => {
                 marginBottom: matchesMD ? '5em' : 0
               }}
             />
-          </Grid>
-        </Grid>
-
-        {/* Right side text block */}
-
-        <Grid item
-          sm
-          style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
-
-          <Grid container
-            justify='flex-end'
-            alignItems='center'
-            direction='row'>
-            <Grid sm item
-              className={classes.heroTextContainer}
-            >
-              <Typography align='center' variant='body1' >
-                <Typography align='center' variant='body1' >
-                  Gatsby on hieno tapa luoda staattinen sivusto React.js:n avulla. Tämän lisäksi yksi Gatsbyn huippuominaisuuksista on, että se voi tuoda sisältöä monista eri lähteistä, mukaan lukien WordPress.
-            </Typography>
-              </Typography>
-              <Typography align='center' variant='body1' >
-                gatsby on nopea kaikella tavalla, jolla on merkitystä
-            </Typography>
-
-              <Grid item>
-                <Link to={'/estimate/'}>
-                  <Button
-                    underlineNone
-                    variant='outlined'
-                    className={classes.learnButtonHero}
-                  >
-                    <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
-                    <ButtonArrow
-                      width={15}
-                      height={15}
-                      fill={theme.palette.common.Grey4}
-                    />
-                  </Button>
-                </Link>
-              </Grid>
-            </Grid>
           </Grid>
         </Grid>
       </Grid>

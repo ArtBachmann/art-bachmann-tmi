@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
       paddingRight: '1.2em',
     }
   },
-  GraphQLBackground: {
+  background: {
     backgroundColor: '#FFFFFF',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -36,57 +36,12 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
 
-  estimateButton: {
-    ...theme.typography.estimate,
-    backgroundColor: theme.palette.common.grey4,
-    borderRadius: 50,
-    height: 45,
-    width: 200,
-    marginRight: 40,
-    fontSize: '1rem',
-    fontWeight: 300,
-    '&:hover': {
-      backgroundColor: theme.palette.secondary.light
-    }
-  },
-
-  buttonContainer: {
-    marginTop: '1.8em'
-  },
-
-  learnButtonHero: {
-    ...theme.typography.learnButton,
-    fontSize: '1rem',
-    fontWeight: 500,
-    height: 45,
-    width: 200,
-    underline: 'none !important',
-    '&:hover': {
-      backgroundColor: theme.palette.common.grey1,
-    }
-  },
-  learnButton: {
-    ...theme.typography.learnButton,
-    fontSize: '1.1rem',
-    fontWeight: 500,
-    height: 40,
-    paddingRight: 12,
-    paddingLeft: 12,
-    marginTop: '1em',
-    '&:hover': {
-      backgroundColor: theme.palette.common.orange2
-    },
-  },
-  logos: {
+  qr: {
     marginLeft: '2em',
     [theme.breakpoints.down('xs')]: {
-      marginLeft: 0
+      marginLeft: '0,3em'
     }
   },
-  devices: {
-    margin: '3em',
-    width: '26em'
-  }
 }))
 
 const GraphQLBlock = () => {
@@ -102,7 +57,7 @@ const GraphQLBlock = () => {
       style={{ height: '30em' }}
       justify='center'
       alignItems='center'
-      className={classes.GraphQLBackground}>
+      className={classes.background}>
 
       <Grid item
         container
@@ -115,7 +70,7 @@ const GraphQLBlock = () => {
         {/* Left side Logo block */}
         <Grid item
           sm
-          className={classes.logos}
+          className={classes.qr}
         >
           <Grid container
             justify='center'
@@ -126,7 +81,7 @@ const GraphQLBlock = () => {
               alt='qr logo'
               src={QR}
               style={{
-                height: '18em',
+                height: '14em',
                 maxWidth: matchesSM ? 300 : '20em',
                 marginRight: matchesMD ? 0 : '3em',
                 marginBottom: matchesMD ? '5em' : 0
@@ -148,31 +103,17 @@ const GraphQLBlock = () => {
             <Grid sm item
               className={classes.heroTextContainer}
             >
-              <Typography align='center' variant='body1' >
-                <Typography align='center' variant='body1' >
-                  Gatsby on hieno tapa luoda staattinen sivusto React.js:n avulla. Tämän lisäksi yksi Gatsbyn huippuominaisuuksista on, että se voi tuoda sisältöä monista eri lähteistä, mukaan lukien WordPress.
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}>
+                Gatsby.js rakentaa nopeimman mahdollisen verkkosivuston. Sen sijaan, että odottaisit sivujen luomista pyynnöstä, rakenna sivut esille ja nosta ne globaaliin palvelinpilveen - valmiina toimittamaan heti käyttäjillesi missä he ovat.
             </Typography>
-              </Typography>
-              <Typography align='center' variant='body1' >
-                gatsby on nopea kaikella tavalla, jolla on merkitystä
+              <Typography variant='body1'
+                gutterBottom
+                style={{ textIndent: '2em' }}>
+                Älä tilaa verkkosivustoa, jolla on edellisen vuosikymmenen tekniikkaa. Verkon tulevaisuus on mobiili, JavaScript ja sovellusliittymät. Jokainen verkkosivusto on verkkosovellus ja jokainen verkkosovellus on verkkosivusto. Gatsby.js on yleinen JavaScript-kehys, jota olet odottanut.
             </Typography>
 
-              <Grid item>
-                <Link to={'/estimate/'}>
-                  <Button
-                    underlineNone
-                    variant='outlined'
-                    className={classes.learnButtonHero}
-                  >
-                    <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
-                    <ButtonArrow
-                      width={15}
-                      height={15}
-                      fill={theme.palette.common.Grey4}
-                    />
-                  </Button>
-                </Link>
-              </Grid>
             </Grid>
           </Grid>
         </Grid>

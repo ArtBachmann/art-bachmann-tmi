@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
 // import Button from '@material-ui/core/Button'
 // import ButtonArrow from '../../original'
 import Typography from '@material-ui/core/Typography'
@@ -78,7 +79,19 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       marginTop: '2em'
     },
-  }
+  },
+  item1: {
+    order: 1,
+    [theme.breakpoints.down('sm')]: {
+      order: 2,
+    },
+  },
+  item2: {
+    order: 2,
+    [theme.breakpoints.down('sm')]: {
+      order: 1,
+    },
+  },
 }))
 
 const Services = () => {
@@ -148,13 +161,13 @@ const Services = () => {
           </Grid>
         </Grid>
 
-        {/* Enemmän kevyitä ja yksinkertaisempia uudelleensuunnitteluja */}
+        {/* 2. rivi >>> Enemmän kevyitä ja yksinkertaisempia uudelleensuunnitteluja */}
         <Grid container
           direction='row'
           className={classes.serviceContainer}
           justify={matchesSM ? 'center' : undefined}>
-
           <Grid item md
+            className={classes.item1}
             style={{
               marginLeft: matchesSM ? 0 : '5em',
               marginRight: matchesSM ? 0 : '5em',
@@ -175,8 +188,8 @@ const Services = () => {
               Siten se johtaa lopulta tyylikkään, nopeaan ja reagoivaan sisällön toimittamiseen.
             </Typography>
           </Grid>
-
           <Grid item container
+            className={classes.item2}
             justify='center'
             alignItems='center'
             md>
