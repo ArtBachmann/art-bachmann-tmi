@@ -126,10 +126,16 @@ export default createMuiTheme({
       fontWeight: 400
     },
     body1: {
-      fontSize: '1.2rem',
+      fontSize: '1.1rem',
       fontFamily: 'Open Sans',
-      color: grey3,
-      fontWeight: '300'
+      color: grey5,
+      fontWeight: '500'
+    },
+    body2: {
+      fontSize: '0.9rem',
+      fontFamily: 'Open Sans',
+      color: grey5,
+      fontWeight: '500'
     },
     caption: {
       fontSize: '1rem',

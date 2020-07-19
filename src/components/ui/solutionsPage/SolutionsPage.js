@@ -10,18 +10,61 @@ import WordPressPublishing from '../../../assets/images/multipleCMS.png'
 import JAMstack from '../../../assets/images/jamstack1.png'
 import ACF from '../../../assets/images/etusivu-acf-fields.png'
 
+import Icon from '@mdi/react'
+import { mdiMotionSensor } from '@mdi/js'
+// Konsultointi
+import { mdiAccountGroupOutline } from '@mdi/js';
+// Launch
+import { mdiApplicationExport } from '@mdi/js';
+// Mockup
+import { mdiBallotOutline } from '@mdi/js'
+
+// Design
+import { mdiContentSaveEditOutline } from '@mdi/js';
+
+// Review
+import { mdiCertificateOutline } from '@mdi/js';
+
+// Build 
+import { mdiCogSyncOutline } from '@mdi/js';
+
+// Maintain
+import { mdiCodeTagsCheck } from '@mdi/js';
+
+// Iterate
+import { mdiCalendarSyncOutline } from '@mdi/js';
+
+
 const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: '8em',
     paddingRight: '8em',
-    paddingTop: '2em',
+    paddingTop: '1em',
     paddingBottom: '2em',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: '2.4em',
+      paddingRight: '2.4em',
+      paddingBottom: '2em',
+      paddingTop: '1em'
+    },
     [theme.breakpoints.down('sm')]: {
       paddingLeft: '1.2em',
       paddingRight: '1.2em',
-      paddingBottom: '1em',
-      paddingTop: '1em'
-    }
+      paddingBottom: '2em',
+      paddingTop: '0.6em'
+    },
+  },
+  item1: {
+    order: 1,
+    [theme.breakpoints.down('sm')]: {
+      order: 2,
+    },
+  },
+  item2: {
+    order: 2,
+    [theme.breakpoints.down('sm')]: {
+      order: 1,
+    },
   },
 }))
 
@@ -243,11 +286,15 @@ const Revolution = () => {
         item
         container
         direction="row"
+        alignItems='center'
         justify="center"
-        className={classes.rowContainer} >
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#80a8aa", height: "8em" }}>
 
         <Grid item>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4"
+            style={{ color: 'white' }}
+            gutterBottom>
             Protsessi
           </Typography>
         </Grid>
@@ -260,60 +307,56 @@ const Revolution = () => {
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
-        justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        alignItems='center'
+        justify={matchesMD ? "center" : undefined}
+        style={{ backgroundColor: "#d5d8dc", height: "38em" }}>
 
         <Grid
           item
           container
           direction="column"
-          lg
-          justify='center'
-          alignItems={matchesMD ? "center" : 'center'}>
+          justify={matchesSM ? 'flex-start' : 'center'}
+          alignItems='center'
+          style={{ maxWidth: "38em" }}
+          md>
 
-
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Konsultointi
             </Typography>
           </Grid>
+
           <Grid
             item
             container
-            alignItems='center'>
+            justify='center'
+            alignItems='center'
+            className={classes.item2}>
             <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+
+              variant={matchesSM ? 'body2' : 'body1'}
+              align={matchesMD ? "center" : 'left'}
+              style={{ color: "#274549" }}
               paragraph
             >
-              After we settle on the best path forward and decide on a solution
-              to pursue, details like the cost and timeline will be finalized.
+              Kun olemme asettuneet parhaalle tielle eteenpäin ja päätämme ratkaisusta, jota jatkaa, yksityiskohdat, kuten kustannukset ja aikataulu, viimeistellään.
             </Typography>
             <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              variant={matchesSM ? 'body2' : 'body1'}
+              align={matchesMD ? "center" : 'left'}
+              style={{ color: "#274549" }}
               paragraph
             >
-              Then it’s time for us to start on your minimum viable product.
-              That’s just a fancy term for a mockup, which doesn’t include
-              colors, images, or any other polished design elements, but
-              captures the essential layout structure and functionality.
-            </Typography>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >
-              This helps us understand and refine the solution itself before
-              getting distracted by specifics and looks.
+              Sitten meidän on aika aloittaa vähimmäiskykyisellä tuotteellasi. Se on vain kuvitteellinen termi mallille, joka ei sisällä värejä, kuvia tai muita kiillotettuja muotoiluelementtejä, mutta sisältää tärkeän asettelurakenteen ja toiminnallisuuden.
             </Typography>
           </Grid>
         </Grid>
@@ -321,14 +364,20 @@ const Revolution = () => {
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          alignItems='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon
+            path={mdiAccountGroupOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
@@ -341,7 +390,7 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#f5f5f5", height: "42em" }}>
 
         <Grid
           item
@@ -352,12 +401,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Mockup
             </Typography>
@@ -369,7 +422,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               After we settle on the best path forward and decide on a solution
@@ -378,7 +431,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               Then it’s time for us to start on your minimum viable product.
@@ -386,41 +439,36 @@ const Revolution = () => {
               colors, images, or any other polished design elements, but
               captures the essential layout structure and functionality.
             </Typography>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >
-              This helps us understand and refine the solution itself before
-              getting distracted by specifics and looks.
-            </Typography>
           </Grid>
         </Grid>
 
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiBallotOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
 
-      {/* Review Section */}
+      {/*3. Review Section */}
       <Grid
         item
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#607D8B", height: "42em" }}>
 
         <Grid
           item
@@ -431,12 +479,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#fff",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Review
             </Typography>
@@ -461,27 +513,24 @@ const Revolution = () => {
             >
               We give you an interactive demonstration of the mockups, thoroughly explaining the thought process that went into each screen and every anticipated feature.
             </Typography>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >Once you’re completely satisfied with the vision for our solution we get down to the nitty gritty, fine-details of design.
-            </Typography>
           </Grid>
         </Grid>
 
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiCertificateOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
@@ -493,7 +542,7 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#dae1e2", height: "42em" }}>
 
         <Grid
           item
@@ -504,12 +553,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Design
             </Typography>
@@ -521,7 +574,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               Using the mockups and notes taken during the consultation as guides, we will start ironing out what the final product will look like.
@@ -529,91 +582,31 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               This also involves using any brand material like fonts, colors, and logos to extend the experience you’re already familiar with.
             </Typography>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >
-              No aspect is superfluous, and care will be taken with every decision.
-            </Typography>
           </Grid>
         </Grid>
 
-
-        <Grid
-          item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
-          />
-        </Grid>
-      </Grid>
-
-      {/* Build Section
-      <Grid
-        item
-        container
-        direction={matchesMD ? "column" : "row"}
-        className={classes.rowContainer}
-        justify={matchesMD ? "center" : undefined}
-        style={{ backgroundColor: "#FBB03B", height: "90em" }}
-      >
         <Grid
           item
           container
-          direction="column"
-          alignItems={matchesMD ? "center" : undefined}
-          lg
-        >
-          <Grid item>
-            <Typography
-              align={matchesMD ? "center" : undefined}
-              variant="h4"
-              gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
-            >
-              Review
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >
-              A second round of review is essential to our goal of creating exactly what you want, exactly how you want it.
-            </Typography>
-            <Typography
-              variant="body1"
-              align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
-              paragraph
-            >
-              This time we’ll be going over the finalized designs in another fully interactive demonstration. Again this gives you an opportunity to tweak things and make sure we get everything right the first time.
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid item lg style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            alt="building construction site"
-            width="100%"
-            style={{ maxWidth: matchesMD ? 700 : 1000 }}
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiContentSaveEditOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
-      </Grid> */}
+      </Grid>
 
 
       {/* Build Section */}
@@ -623,7 +616,7 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#e0dede", height: "42em" }}>
 
         <Grid
           item
@@ -634,12 +627,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Build
             </Typography>
@@ -651,17 +648,16 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               Here’s where we get down to business.
-
               Engineering begins after your approval on the final designs. We start by scaffolding out the project on a high level, prioritizing some areas over others.
             </Typography>
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               Each area is then developed in order of importance until ready to be connected to the next piece.
@@ -672,14 +668,18 @@ const Revolution = () => {
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiCogSyncOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
@@ -692,7 +692,7 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#f3f3f3", height: "42em" }}>
 
         <Grid
           item
@@ -700,15 +700,18 @@ const Revolution = () => {
           direction="column"
           lg
           justify='center'
-          alignItems={matchesMD ? "center" : 'center'}>
+          alignItems='center'>
 
-
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Launch
             </Typography>
@@ -720,7 +723,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               The moment we’ve all been waiting for.
@@ -729,7 +732,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               When you say the word, we press the button and launch your project out to the public. We’re there to ensure everything goes to plan so you can start reaping the rewards of your technological investment immediately.
@@ -737,17 +740,20 @@ const Revolution = () => {
           </Grid>
         </Grid>
 
-
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiApplicationExport}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
@@ -760,7 +766,7 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#607D8B", height: "42em" }}>
 
         <Grid
           item
@@ -771,12 +777,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#fff",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Maintain
             </Typography>
@@ -808,27 +818,30 @@ const Revolution = () => {
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiCodeTagsCheck}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
 
       {/* Iterate Section */}
-      {/* Maintain Section */}
       <Grid
         item
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
-        style={{ backgroundColor: "#FF7373", height: "42em" }}>
+        style={{ backgroundColor: "#c1cbcd", height: "42em" }}>
 
         <Grid
           item
@@ -839,12 +852,16 @@ const Revolution = () => {
           alignItems={matchesMD ? "center" : 'center'}>
 
 
-          <Grid item>
+          <Grid item container justify='flex-start'>
             <Typography
-              align={matchesMD ? "center" : undefined}
+              align='center'
               variant="h4"
               gutterBottom
-              style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }}
+              style={{
+                color: "#274549",
+                marginTop: matchesMD ? 0 : "1em",
+                marginLeft: '2em'
+              }}
             >
               Iterate
             </Typography>
@@ -856,7 +873,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               The cycle repeats whenever you come up with a new idea for extending your current project, or come up with a brand new system entirely.
@@ -864,7 +881,7 @@ const Revolution = () => {
             <Typography
               variant="body1"
               align={matchesMD ? "center" : undefined}
-              style={{ color: "#fff", maxWidth: "20em" }}
+              style={{ color: "#274549", maxWidth: "20em" }}
               paragraph
             >
               By planning for future features and changes we can build and evolve your application over time. As new use cases and customer needs develop we can respond with continuous integration of new content.
@@ -875,18 +892,22 @@ const Revolution = () => {
 
         <Grid
           item
-          lg
-          alignItems={matchesMD ? "center" : undefined}
-          style={{ alignSelf: "center" }}>
-          <img
-            src={JAMstack}
-            width="100%"
-            alt="basic website design outline"
-            style={{ maxWidth: 1000, marginTop: '8em' }}
+          container
+          justify='center'
+          style={{ alignSelf: "center" }}
+          className={classes.item1}
+          md>
+          <Icon path={mdiCalendarSyncOutline}
+            title="Motion Sensor."
+            size={matchesMD ? '8em' : '22em'}
+            style={{
+              color: '#80a8aa',
+              marginTop: matchesMD ? '2em' : undefined
+            }}
           />
         </Grid>
       </Grid>
-    </Grid >
+    </Grid>
   );
 }
 

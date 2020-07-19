@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import QR from '../../../assets/images/artbachmann.eu.png'
+import QRHome from '../../../assets/images/art-bachmann-tmi.png'
 
 import ButtonArrow from '../../original'
 
@@ -79,12 +80,23 @@ const GraphQLBlock = () => {
 
             <img
               alt='qr logo'
+              src={QRHome}
+              style={{
+                width: '14em',
+                maxWidth: matchesSM ? 100 : '10em',
+                marginLeft: matchesMD ? 1 : '3em',
+                marginBottom: matchesMD ? '5em' : 0
+              }}
+            />
+
+            <img
+              alt='qr logo'
               src={QR}
               style={{
-                height: '14em',
-                maxWidth: matchesSM ? 300 : '20em',
-                marginRight: matchesMD ? 0 : '3em',
-                marginBottom: matchesMD ? '5em' : 0
+                width: '14em',
+                maxWidth: matchesSM ? 100 : '10em',
+                marginBottom: matchesMD ? '5em' : 0,
+                marginLeft: matchesMD ? 1 : '3em'
               }}
             />
           </Grid>
