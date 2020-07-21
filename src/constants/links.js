@@ -9,8 +9,20 @@ export default [
   },
   {
     path: "/ratkaisut",
-    text: "RATKAISUT"
+    text: "RATKAISUT",
+    submenu: [
+      {
+        path: "/pwa",
+        text: "PWA"
+      },
+      {
+        path: "/jamstack",
+        text: "JAMSTACK"
+      },
+    ],
   },
+
+
 
   // {
   //   path: "/blog",

@@ -7,8 +7,8 @@ import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import WordPressPublishing from '../../../assets/images/multipleCMS.png'
-import JAMstack from '../../../assets/images/jamstack1.png'
-import ACF from '../../../assets/images/etusivu-acf-fields.png'
+import ACF from '../../../assets/images/acf-screenshot.png'
+import CPT from '../../../assets/images/CPT UI-screenshot.png'
 
 import Icon from '@mdi/react'
 import { mdiMotionSensor } from '@mdi/js'
@@ -235,7 +235,7 @@ const Revolution = () => {
       >
         <Grid item lg>
           <img
-            src={WordPressPublishing}
+            src={CPT}
             alt="mountain through binoculars"
             style={{
               width: '26em',

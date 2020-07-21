@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import QR from '../../../assets/images/artbachmann.eu.png'
 import QRHome from '../../../assets/images/art-bachmann-tmi.png'
+import HeadlessWPFrontpage from '../../../assets/images/headless-wp-frontpage-screenshot.png'
+import CafeteriaGatsbyFrontpage from '../../../assets/images/cafeteria-gatsby-frontpage-screenshot.png'
 
 import ButtonArrow from '../../original'
 
@@ -35,6 +37,7 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: 'no-repeat',
     height: '100%',
     width: '100%',
+    marginTop: '2em'
   },
 
   qr: {
@@ -55,7 +58,7 @@ const GraphQLBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: '30em' }}
+      style={{ height: '36em' }}
       justify='center'
       alignItems='center'
       className={classes.background}>
@@ -69,43 +72,70 @@ const GraphQLBlock = () => {
         spacing={matchesXS ? 8 : 'inherit'}>
 
         {/* Left side Logo block */}
-        <Grid item
-          sm
+        <Grid
+          item
+          md
           className={classes.qr}
         >
-          <Grid container
+          <Grid item container
             justify='center'
             alignItems='center'
             direction='row'>
 
-            <img
-              alt='qr logo'
-              src={QRHome}
-              style={{
-                width: '14em',
-                maxWidth: matchesSM ? 100 : '10em',
-                marginLeft: matchesMD ? 1 : '3em',
-                marginBottom: matchesMD ? '5em' : 0
-              }}
-            />
+            <Grid sm item container direction='column'>
+              <img
+                alt='qr logo'
+                src={QRHome}
+                style={{
+                  width: '14em',
+                  maxWidth: matchesSM ? 100 : '14em',
+                  marginLeft: matchesMD ? 1 : '3em',
+                  marginBottom: matchesMD ? '5em' : 0
+                }}
+              />
 
-            <img
-              alt='qr logo'
-              src={QR}
-              style={{
-                width: '14em',
-                maxWidth: matchesSM ? 100 : '10em',
-                marginBottom: matchesMD ? '5em' : 0,
-                marginLeft: matchesMD ? 1 : '3em'
-              }}
-            />
+              <img
+                alt='headless wordpress front page'
+                src={HeadlessWPFrontpage}
+                style={{
+                  width: '14em',
+                  maxWidth: matchesSM ? 100 : '14em',
+                  marginLeft: matchesMD ? 1 : '3em',
+                  marginBottom: matchesMD ? '5em' : 0
+                }}
+              />
+            </Grid>
+
+            <Grid sm item container direction='column'>
+              <img
+                alt='qr logo'
+                src={QR}
+                style={{
+                  width: '14em',
+                  maxWidth: matchesSM ? 100 : '14em',
+                  marginBottom: matchesMD ? '5em' : 0,
+                  marginLeft: matchesMD ? 1 : '3em'
+                }}
+              />
+
+              <img
+                alt='headless wordpress front page'
+                src={CafeteriaGatsbyFrontpage}
+                style={{
+                  width: '14em',
+                  maxWidth: matchesSM ? 100 : '14em',
+                  marginLeft: matchesMD ? 1 : '3em',
+                  marginBottom: matchesMD ? '5em' : 0
+                }}
+              />
+            </Grid>
           </Grid>
         </Grid>
 
         {/* Right side text block */}
 
         <Grid item
-          sm
+          md
           style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
 
           <Grid container
