@@ -1,16 +1,12 @@
 import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { Link } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import QR from '../../../assets/images/artbachmann.eu.png'
 import QRHome from '../../../assets/images/art-bachmann-tmi.png'
 import HeadlessWPFrontpage from '../../../assets/images/headless-wp-frontpage-screenshot.png'
 import CafeteriaGatsbyFrontpage from '../../../assets/images/cafeteria-gatsby-frontpage-screenshot.png'
-
-import ButtonArrow from '../../original'
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {

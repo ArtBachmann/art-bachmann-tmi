@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-graphql',
       options: {
-        typeName: 'WordPress',
-        fieldName: 'wordPress',
+        typeName: 'WordPressArt',
+        fieldName: 'wordPressArt',
         url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
         refetchInterval: 60
       }
@@ -32,6 +32,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
+        minimizeDeprecationNotice: true,
         includedRoutes: [
           "**/categories",
           "**/posts",
@@ -40,7 +41,7 @@ module.exports = {
           "**/tags",
           "**/taxonomies",
           "**/users",
-          "**/menus"
+          "**/menus",
         ],
         baseUrl: 'test.artbachmann.fi/art-bachmann-tmi',
         protocol: 'http',
@@ -52,6 +53,17 @@ module.exports = {
         },
       },
     },
+
+    // {
+    //   resolve: `gatsby-source-wordpress-experimental`,
+    //   options: {
+    //     /*
+    //      * The full URL of the WordPress site's GraphQL API.
+    //      * Example : 'https://www.example-site.com/graphql'
+    //      */
+    //     url: `http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
+    //   },
+    // },
 
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',

@@ -11,7 +11,6 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Snackbar from '@material-ui/core/Snackbar'
-import ButtonArrow from '../../original'
 
 import Art from '../../../assets/images/artbachmann_medium.jpg'
 import background from '../../../assets/svg/Pattern-Randomized.svg'
@@ -19,7 +18,7 @@ import mobileBackground from '../../../assets/svg/Pattern-Randomized.svg'
 import phoneIcon from '../../../assets/svg/phone.svg'
 import emailIcon from '../../../assets/svg/email.svg'
 import airplane from '../../../assets/svg/send.svg'
-//import LearnButton from '../../buttons/LearnButton'
+
 
 
 

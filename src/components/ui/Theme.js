@@ -45,7 +45,8 @@ export default createMuiTheme({
       violet: `${violet}`,
       sea_foam: `${sea_foam}`,
       green5: `${green5}`,
-      aqua3dark: `${aqua3dark}`
+      aqua3dark: `${aqua3dark}`,
+      aqua3light: `${aqua3light}`,
 
     },
     primary: {

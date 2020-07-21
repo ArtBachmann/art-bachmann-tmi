@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import styles from '../../../css/navbar.module.css'
-import links from '../../../constants/links'
+import styles from './navbar.module.css'
 import { FaAlignRight } from "react-icons/fa"
+import { NavigationWrapper } from './NavigationStyles';
+
+
+// This version uses gatsby travels site as a template...
 
 
 
-const Header = () => {
+const Header = ({ menu }) => {
   const [isOpen, setNav] = useState(false)
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -19,23 +22,37 @@ const Header = () => {
             <FaAlignRight className={styles.logoIcon} />
           </button>
         </div>
-        <ul
-          className={
-            isOpen
-              ? `${styles.navLinks} ${styles.showNav}`
-              : `${styles.navLinks}`
-          }
-        >
-          {links.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link fade to={item.path}>
-                  {item.text}
+        <NavigationWrapper>
+          <ul
+            className={
+              isOpen
+                ? `${styles.navLinks} ${styles.showNav}`
+                : `${styles.navLinks}`
+            }
+          >
+            {menu.items.map((item, i) => (
+              <li key={i}>
+                <Link to={item.url} activeClassName="nav-active">
+                  {item.title}
                 </Link>
+                {item.child_items ? (
+                  <>
+                    <span>&#8964;</span>
+                    <ul>
+                      {item.child_items.map((child, iChild) => (
+                        <li key={iChild}>
+                          <Link to={child.url} activeClassName="nav-active">
+                            {child.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : null}
               </li>
-            )
-          })}
-        </ul>
+            ))}
+          </ul>
+        </NavigationWrapper>
       </div>
     </nav>
   )

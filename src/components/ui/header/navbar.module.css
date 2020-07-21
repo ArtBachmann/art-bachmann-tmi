@@ -1,11 +1,12 @@
-.navbar {
+/* .navbar {
   display: flex;
   position: sticky;
   width: 66%;
   align-items: center;
   justify-content: flex-end;
   padding: 0 0;
-}
+} */
+
 
 .nav-header {
   display: flex;
@@ -39,13 +40,10 @@
 
 }
 
-ul {
-  padding: 0;
-}
-
 .show-nav {
   height: 216px;
 }
+
 
 .nav-links a {
   display: flex;
@@ -91,26 +89,4 @@ ul {
     height: auto;
     display: flex;
   }
-
-  .nav-active {
-    color: #2640d2;
-  }
-
-  /* 
-  .nav-social-links {
-    display: flex;
-    line-height: 0;
-  }
-
-  .nav-social-links a {
-    color: var(--primaryColor);
-    margin: 0 0.5rem;
-    font-size: 1.2rem;
-    transition: var(--mainTransition);
-  }
-
-  .nav-social-links a:hover {
-    color: var(--mainBlack);
-    transform: translateY(-5px);
-  } */
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+//import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -107,7 +107,7 @@ const Services = () => {
           }}
           variant='h1'
           gutterBottom>
-          WordPressin käyttäminen Headless CMS-laitteena tarjoaa useita etuja yrityksille, verkkosivustojen omistajille seka loppukäyttäjille.
+          WordPressin käyttäminen Headless CMS-laitteena tarjoaa useita etuja verkkosivustojen omistajille seka loppukäyttäjille.
         </Typography>
       </Grid>
 

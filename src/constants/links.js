@@ -10,20 +10,7 @@ export default [
   {
     path: "/ratkaisut",
     text: "RATKAISUT",
-    submenu: [
-      {
-        path: "/pwa",
-        text: "PWA"
-      },
-      {
-        path: "/jamstack",
-        text: "JAMSTACK"
-      },
-    ],
   },
-
-
-
   // {
   //   path: "/blog",
   //   text: "TIETOPANKKI"

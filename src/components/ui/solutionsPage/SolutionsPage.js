@@ -11,7 +11,6 @@ import ACF from '../../../assets/images/acf-screenshot.png'
 import CPT from '../../../assets/images/CPT UI-screenshot.png'
 
 import Icon from '@mdi/react'
-import { mdiMotionSensor } from '@mdi/js'
 // Konsultointi
 import { mdiAccountGroupOutline } from '@mdi/js';
 // Launch

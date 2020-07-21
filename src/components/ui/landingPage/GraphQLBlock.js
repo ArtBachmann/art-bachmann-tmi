@@ -1,13 +1,9 @@
 import React from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import { Link } from 'gatsby'
 import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import GraphQLLogo from '../../../assets/images/Graphql-transparent.png'
-
-import ButtonArrow from '../../original'
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
