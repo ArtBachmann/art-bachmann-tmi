@@ -12,6 +12,7 @@ export const Overlay = styled.div`
   left: 0px;
   padding: 20px;
   transition: all 0.3s ease;
+  margin-top: 180px;
 
   .inner {
     display: flex;
@@ -24,18 +25,13 @@ export const Overlay = styled.div`
     color: #fff;
     padding: 40px;
 
-    .whiteLogo {
-      max-width: 400px;
-      margin: 0 0 60px 0;
-    }
-
     .overlayMenu {
       text-align: center;
       list-style-type: none;
-      margin: 0;
+      margin: 120px 0 0 0;
 
       li {
-        margin: 0 0 20px 0;
+        margin: 20px 0 20px 0;
       }
 
       li.overlayActive {
@@ -43,8 +39,8 @@ export const Overlay = styled.div`
       }
 
       a {
-        font-family: 'Teko', Arial, Helvetica, sans-serif;
-        font-size: 2rem;
+        font-family: 'Proza Libre', Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
         color: #fff;
         transition: all 0.3s ease;
         text-decoration: none;
@@ -58,8 +54,8 @@ export const Overlay = styled.div`
 
   .closeButton {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 280px;
+    right: 60px;
     color: #fff;
     width: 30px;
     height: 30px;

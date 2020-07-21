@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HamburgerButton = styled.div`
-  img {
+  button {
     position: fixed;
     display: block;
     z-index: 1000;
@@ -16,7 +16,7 @@ export const HamburgerButton = styled.div`
       transform: scale(1.2);
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1399px) {
       display: none;
     }
   }

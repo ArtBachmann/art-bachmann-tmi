@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const NavigationWrapper = styled.nav`
-  margin: 5px 0 10px 0; /* just to give some spacing */
+  margin: 5px 80px 10px 0; /* just to give some spacing */
   color: #212121;
   text-transform: uppercase;
   position: absolute;
   right: 0px;
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-family: 'Proza Libre', Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -16,13 +16,14 @@ export const NavigationWrapper = styled.nav`
     color: #d22e26;
   }
 
-  @media (min-width: 992px) {
-    font-size: 0.85rem;
+  @media (min-width: 1199px) {
+    font-size: 0.9rem;
     display: block;
   }
 
-  @media (min-width: 1200px) {
+  @media (max-width: 1400px) {
     font-size: 1rem;
+     display: none;
   }
 
   ul li {

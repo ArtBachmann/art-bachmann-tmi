@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { HamburgerButton } from './HamburgerStyles';
-import HamburgerHeart from './tango_heart_hamburger.svg';
+import { FaAlignRight } from "react-icons/fa"
+import styles from './navbar.module.css'
 
 const Hamburger = ({ handleOverlayMenu }) => (
-  <HamburgerButton onClick={handleOverlayMenu} tabIndex="0">
-    <img src={HamburgerHeart} alt="tango-hamburger" />
+  <HamburgerButton>
+    <button type="button" className={styles.logoBtn} onClick={handleOverlayMenu}>
+      <FaAlignRight className={styles.logoIcon} />
+    </button>
   </HamburgerButton>
+
 );
 
 Hamburger.propTypes = {

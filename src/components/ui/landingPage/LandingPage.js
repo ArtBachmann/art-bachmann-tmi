@@ -19,8 +19,3 @@ const LandingPage = () => {
 }
 
 export default LandingPage
-
-// edefef
-
-// gatsby is fast in all the way that matters
-// gatsby on nopea kaikella tavalla, jolla on merkitystä

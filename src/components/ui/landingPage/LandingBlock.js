@@ -26,8 +26,8 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: '4em',
     paddingRight: '4em',
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: '1.2em',
-      paddingRight: '1.2em',
+      paddingLeft: '0.6em',
+      paddingRight: '0.6em',
     }
   },
   infoBackground: {
@@ -102,9 +102,9 @@ const LandingBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: '100vh' }}
+      style={{ height: '80em' }}
       justify='center'
-      alignItems='center'
+      alignItems='flex-start'
       className={classes.infoBackground}>
 
       {/* Headign */}
@@ -112,18 +112,26 @@ const LandingBlock = () => {
       <Grid item container
         justify='center'
         className={classes.rowContainer}
-        style={{ maxWidth: matchesSM ? 300 : '60em', paddingTop: '3em' }}>
+        style={{
+          maxWidth: matchesXS ? 400 : '56em',
+          paddingTop: matchesSM ? '3em' : '6em'
+        }}>
 
-        <Typography variant='h1' align='center' >
+        <Typography
+          variant={matchesSM ? 'h6' : 'h1'}
+          align='center'
+        >
           Yksi sisällönhallintajärjestelmä,
-          useita etusivuja. Päättömään CMS: ään tallennetut tiedot ovat
-          käytettävissä näytölle missä tahansa yhteydessä
+          useita etusivuja. Tiedot ovat
+          käytettävissä automaattisesti usealla laitteella samanaikaisesti.
         </Typography>
       </Grid>
 
-      <Grid item
+      <Grid
         container
         justify='center'
+        alignItems='flex-start'
+        style={{ marginTop: matchesSM ? '1em' : matchesMD ? '-2em' : '-8em' }}
       >
         <img alt='possible devices for headless wordpress'
           src={devices}

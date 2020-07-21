@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-
-import WhiteLogo from './tango_logo_white.svg';
 import CloseButton from './tango_close_button.svg';
 
 import { Overlay } from './OverlayMenuStyles';
@@ -39,7 +37,6 @@ const OverlayMenu = ({ menuOpen, callback }) => {
   return (
     <Overlay menuOpen={menuOpen}>
       <div className="inner">
-        <img className="whiteLogo" src={WhiteLogo} alt="tango-white-logo" />
         <ul className="overlayMenu">
           {menu.items.map((item, i) => (
             <li key={i}>
