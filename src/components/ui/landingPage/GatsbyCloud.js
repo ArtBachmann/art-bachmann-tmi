@@ -1,0 +1,2 @@
+// What are Gatsby Cloud and WordPress, and why use them together ?
+//   WordPress is the world’s most popular CMS.By integrating Gatsby with WordPress content editors can continue to edit and publish content, while developers build and ship the site using Gatsby.Gatsby Cloud allows you to integrate your site with WordPress in order to run performant builds and preview content changes made in the CMS before publishing.
