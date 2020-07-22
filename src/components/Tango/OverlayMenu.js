@@ -49,7 +49,7 @@ const OverlayMenu = ({ menuOpen, callback }) => {
                   <ul>
                     {item.child_items.map((child, iChild) => (
                       <li key={iChild}>
-                        <Link to={child.url} activeClassName="nav-active">
+                        <Link to={child.url} activeClassName="active">
                           {child.title}
                         </Link>
                       </li>
@@ -67,7 +67,7 @@ const OverlayMenu = ({ menuOpen, callback }) => {
           tabIndex="0"
           onKeyDown={callback}
         >
-          <img src={CloseButton} alt="tango-close-button" />
+          <img src={CloseButton} alt="wordpress-close-button" />
         </div>
       </div>
     </Overlay>

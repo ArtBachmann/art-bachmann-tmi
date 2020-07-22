@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const NavigationWrapper = styled.nav`
   margin: 5px 80px 10px 0; /* just to give some spacing */
-  color: #212121;
+  color: #274549;
   text-transform: uppercase;
   position: absolute;
   right: 0px;
@@ -13,7 +13,7 @@ export const NavigationWrapper = styled.nav`
   display: none;
 
   .nav-active {
-    color: #d22e26;
+    color: #607D8B;
   }
 
   @media (min-width: 1199px) {
@@ -54,7 +54,7 @@ export const NavigationWrapper = styled.nav`
   }
 
   ul li a:hover {
-    color: #d22e26;
+    color: #607D8B;
   }
 
   ul ul {

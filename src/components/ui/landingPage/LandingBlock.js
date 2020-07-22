@@ -8,26 +8,30 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import infoBackground from '../../../assets/images/3d-background-light.jpg'
 import wordpressgatsbyLogo from '../../../assets/images/GatsbyWordpressLogos Rounded.png'
-import devices from '../../../assets/images/multiple-devices-cms.png'
+import devices from '../../../assets/images/tech-devices-transparent.png'
 
 import ButtonArrow from '../../original'
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
-    marginTop: '5em',
+    marginTop: '6em',
     [theme.breakpoints.down('md')]: {
-      marginTop: '3em'
+      marginTop: '6em'
     },
-    [theme.breakpoints.down('xs')]: {
-      marginTop: '2em',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '4em',
     },
   },
   rowContainer: {
     paddingLeft: '4em',
     paddingRight: '4em',
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: '2em',
+      paddingRight: '2em',
+    },
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: '0.6em',
-      paddingRight: '0.6em',
+      paddingLeft: '1em',
+      paddingRight: '1em',
     }
   },
   infoBackground: {
@@ -88,8 +92,38 @@ const useStyles = makeStyles(theme => ({
   },
   devices: {
     margin: '2em',
-    width: '20em'
+    width: '60em',
+    [theme.breakpoints.down('md')]: {
+      width: '40em',
+      marginTop: '-2em',
+      [theme.breakpoints.down('sm')]: {
+        width: '30em',
+        marginTop: '2em',
+        marginBottom: '4em',
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: '24em',
+        marginBottom: '4em'
+
+      },
+    },
+  },
+  heroTextContainer: {
+    width: '46em',
+    [theme.breakpoints.down('md')]: {
+      width: '40em',
+      marginBottom: '2em',
+      marginTop: '4em'
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '32em',
+      marginTop: '4em',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '24em'
+    }
   }
+
 }))
 
 const LandingBlock = () => {
@@ -114,7 +148,7 @@ const LandingBlock = () => {
         className={classes.rowContainer}
         style={{
           maxWidth: matchesXS ? 400 : '56em',
-          paddingTop: matchesSM ? '3em' : '6em'
+          paddingTop: matchesSM ? '4em' : '6em'
         }}>
 
         <Typography
@@ -143,78 +177,88 @@ const LandingBlock = () => {
         container
         style={{
           textAlign: matchesXS ? 'center' : 'inherit',
-          marginBottom: '6em'
+          marginBottom: '6em',
+          marginTop: '-8em',
         }}
-        direction={matchesXS ? 'column' : 'row'}
-        spacing={matchesXS ? 8 : 'inherit'}>
+        direction={matchesMD ? 'column' : 'row'}
+        spacing={matchesMD ? 8 : 'inherit'}>
 
         {/* Left side text block */}
         <Grid item
-          sm
+          md
           style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
 
           <Grid container
-            justify='flex-end'
+            justify='center'
             alignItems='center'
-            direction='row'>
-            <Grid sm item
-              className={classes.heroTextContainer}
-            >
+            direction='column'>
+
+            <Grid item
+              className={classes.heroTextContainer}>
 
               <Typography variant='body1'
                 gutterBottom
-                style={{ textIndent: '2em' }}>
+                style={{
+                  textIndent: '1em',
+                  align: 'center'
+                }}>
                 Voit käyttää "Headless WordPressiä" julkaistaksesi verkkosivustosi sisältöä Facebook-sivullasi, Google My Business -luettelossa tai yrityksesi wikissä. Tämä lähestymistapa on hyödyllinen, jos haluat julkaista sisältösi mobiilisovelluksissa, staattisissa verkkosivustoissa tai edistyneissä verkkosovelluksissa.
-            </Typography>
+              </Typography>
 
               <Typography variant='body1'
                 gutterBottom
-                style={{ textIndent: '2em' }}
-              >
+                style={{
+                  textIndent: '1em',
+                  align: 'center'
+                }}>
+
                 Gatsbyn lisääminen on loistava tapa lisätä nykyaikaisia suorituskykyä, skaalautuvuutta, turvallisuutta ja kehityksen nopeuden etuja samalla kun WordPress tarjoaa tutun sisällön luomisen käyttöliittymän.
-            </Typography>
-              <Grid container
-                justify='center'
-                direction='row'
-                className={classes.buttonContainer}
-              >
-                <Grid item>
-                  <Button
-                    variant='contained'
-                    className={classes.estimateButton}
-                  >
-                    Ilmainen Arvio
-                  </Button>
-                </Grid>
-
-
-                <Grid item>
-                  <Link to={'/estimate/'}>
-                    <Button
-                      underlineNone
-                      variant='outlined'
-                      className={classes.learnButtonHero}
-                    >
-                      <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
-                      <ButtonArrow
-                        width={15}
-                        height={15}
-                        fill={theme.palette.common.Grey4}
-                      />
-                    </Button>
-                  </Link>
-                </Grid>
-
-              </Grid>
+              </Typography>
             </Grid>
 
+            {/* Buttons section */}
+            <Grid container
+              justify='center'
+              direction='row'
+              className={classes.buttonContainer}>
+
+              {/* Ilmainen arvio button */}
+              <Grid item>
+                <Button
+                  variant='contained'
+                  className={classes.estimateButton}
+                >
+                  Ilmainen Arvio
+                  </Button>
+              </Grid>
+
+              {/* Katso lisaa button */}
+              <Grid item>
+                <Link to={'/estimate/'}>
+                  <Button
+                    underlineNone
+                    variant='outlined'
+                    className={classes.learnButtonHero}
+                  >
+                    <span style={{ marginRight: 10, textDecoration: 'none !important' }}>Katso Lisää</span>
+                    <ButtonArrow
+                      width={15}
+                      height={15}
+                      fill={theme.palette.common.Grey4}
+                    />
+                  </Button>
+                </Link>
+              </Grid>
+
+            </Grid>
           </Grid>
+
         </Grid>
 
 
         {/* Right side Logos block */}
         <Grid item
-          sm
+          md
           className={classes.logos}
         >
           <Grid container
