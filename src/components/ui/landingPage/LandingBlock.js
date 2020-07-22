@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: 50,
     height: 45,
     width: 200,
-    marginRight: 40,
+    marginBottom: '3em',
     fontSize: '1rem',
     fontWeight: 300,
     '&:hover': {
@@ -58,7 +58,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   buttonContainer: {
-    marginTop: '1.8em'
+    marginTop: '1.8em',
+    align: 'center'
   },
 
   learnButtonHero: {
@@ -67,61 +68,63 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 500,
     height: 45,
     width: 200,
+    marginBottom: '3em',
     underline: 'none !important',
     '&:hover': {
       backgroundColor: theme.palette.common.grey1,
     }
   },
-  learnButton: {
-    ...theme.typography.learnButton,
-    fontSize: '1.1rem',
-    fontWeight: 500,
-    height: 40,
-    paddingRight: 12,
-    paddingLeft: 12,
-    marginTop: '1em',
-    '&:hover': {
-      backgroundColor: theme.palette.common.orange2
-    },
-  },
+
   logos: {
     marginLeft: '2em',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       marginLeft: 0
     }
   },
+
   devices: {
-    margin: '2em',
-    width: '60em',
+    [theme.breakpoints.down('sm')]: {
+      width: '30em',
+      //paddingTop: '2em',
+      paddingBottom: '2em',
+    },
     [theme.breakpoints.down('md')]: {
       width: '40em',
-      marginTop: '-2em',
-      [theme.breakpoints.down('sm')]: {
-        width: '30em',
-        marginTop: '2em',
-        marginBottom: '4em',
-      },
-      [theme.breakpoints.down('xs')]: {
-        width: '24em',
-        marginBottom: '4em'
-
-      },
+      paddingTop: '2em',
+      paddingBottom: '2em',
+    },
+    [theme.breakpoints.down('lg')]: {
+      width: '40em',
+      paddingTop: '3em',
+      paddingBottom: '3em',
+    },
+    [theme.breakpoints.down('xl')]: {
+      width: '60em',
+      paddingTop: '2em',
+      paddingBottom: '3em',
     },
   },
+
   heroTextContainer: {
-    width: '46em',
+    [theme.breakpoints.down('xl')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
+    [theme.breakpoints.down('lg')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
     [theme.breakpoints.down('md')]: {
-      width: '40em',
-      marginBottom: '2em',
-      marginTop: '4em'
+      width: '80vw',
+      paddingTop: '4em'
     },
+
     [theme.breakpoints.down('sm')]: {
-      width: '32em',
-      marginTop: '4em',
+      width: '90vw',
+      paddingTop: '4em',
     },
-    [theme.breakpoints.down('xs')]: {
-      width: '24em'
-    }
   }
 
 }))
@@ -152,12 +155,15 @@ const LandingBlock = () => {
         }}>
 
         <Typography
-          variant={matchesSM ? 'h6' : 'h1'}
+          variant={
+            matchesXS ? 'h6' :
+              matchesSM ? 'h5' :
+                matchesMD ? 'h4' : 'h1'}
           align='center'
         >
           Yksi sisällönhallintajärjestelmä,
           useita etusivuja. Tiedot ovat
-          käytettävissä automaattisesti usealla laitteella samanaikaisesti.
+          käytettävissä automaattisesti monella laitteella samanaikaisesti.
         </Typography>
       </Grid>
 
@@ -165,7 +171,7 @@ const LandingBlock = () => {
         container
         justify='center'
         alignItems='flex-start'
-        style={{ marginTop: matchesSM ? '1em' : matchesMD ? '-2em' : '-8em' }}
+        style={{ marginTop: matchesSM ? '-2em' : matchesMD ? 0 : '-6em' }}
       >
         <img alt='possible devices for headless wordpress'
           src={devices}
@@ -184,32 +190,39 @@ const LandingBlock = () => {
         spacing={matchesMD ? 8 : 'inherit'}>
 
         {/* Left side text block */}
-        <Grid item
-          md
-          style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
+        <Grid
+          item
+          container
+          justify='center'
+          alignItems='center'
+          direction='column'
+          md >
 
-          <Grid container
-            justify='center'
-            alignItems='center'
-            direction='column'>
+          <Grid
+            item
+            container
+            className={classes.heroTextContainer} >
 
-            <Grid item
-              className={classes.heroTextContainer}>
-
-              <Typography variant='body1'
+            <Grid item>
+              <Typography
+                variant='body1'
                 gutterBottom
                 style={{
-                  textIndent: '1em',
-                  align: 'center'
+                  textIndent: matchesMD ? undefined : '1em',
+                  textAlign: matchesMD ? 'center' : undefined,
+                  fontSize: matchesXS ? '0.9rem' :
+                    matchesSM ? '1rem' : '1.1rem'
                 }}>
-                Voit käyttää "Headless WordPressiä" julkaistaksesi verkkosivustosi sisältöä Facebook-sivullasi, Google My Business -luettelossa tai yrityksesi wikissä. Tämä lähestymistapa on hyödyllinen, jos haluat julkaista sisältösi mobiilisovelluksissa, staattisissa verkkosivustoissa tai edistyneissä verkkosovelluksissa.
+                Voit käyttää "Headless WordPressiä" julkaistaksesi verkkosivustosi sisältöä esimerkiksi Facebook-sivullasi, Googlen' My Business -luettelossa tai yrityksesi wikissä. Tämä lähestymistapa on hyödyllinen, jos haluat julkaista sisältösi mobiilisovelluksissa, staattisissa verkkosivustoissa tai edistyneissä verkkosovelluksissa.
               </Typography>
 
               <Typography variant='body1'
                 gutterBottom
                 style={{
-                  textIndent: '1em',
-                  align: 'center'
+                  textIndent: matchesMD ? undefined : '1em',
+                  textAlign: matchesMD ? 'center' : undefined,
+                  fontSize: matchesXS ? '0.9rem' :
+                    matchesSM ? '1rem' : '1.1rem'
                 }}>
 
                 Gatsbyn lisääminen on loistava tapa lisätä nykyaikaisia suorituskykyä, skaalautuvuutta, turvallisuutta ja kehityksen nopeuden etuja samalla kun WordPress tarjoaa tutun sisällön luomisen käyttöliittymän.
@@ -217,14 +230,16 @@ const LandingBlock = () => {
             </Grid>
 
             {/* Buttons section */}
-            <Grid container
+            <Grid item container
               justify='center'
-              direction='row'
+              alignItems='center'
+              direction={matchesSM ? 'column' : 'row'}
               className={classes.buttonContainer}>
 
               {/* Ilmainen arvio button */}
-              <Grid item>
+              <Grid item container justify='center' sm>
                 <Button
+
                   variant='contained'
                   className={classes.estimateButton}
                 >
@@ -233,7 +248,7 @@ const LandingBlock = () => {
               </Grid>
 
               {/* Katso lisaa button */}
-              <Grid item>
+              <Grid item container justify='center' sm>
                 <Link to={'/estimate/'}>
                   <Button
                     underlineNone
@@ -257,23 +272,20 @@ const LandingBlock = () => {
 
 
         {/* Right side Logos block */}
-        <Grid item
+        <Grid item container
+          justify='center'
+          alignItems='center'
           md
-          className={classes.logos}
-        >
-          <Grid container
-            justify='center'
-            alignItems='center'
-            direction='row'>
+          className={classes.logos} >
 
+          <Grid item>
             <img
               alt='wordpress gatsby logo'
               src={wordpressgatsbyLogo}
               style={{
-                height: '12em',
-                maxWidth: matchesSM ? 300 : '40em',
-                marginRight: matchesMD ? 0 : '3em',
-                marginBottom: matchesMD ? '5em' : 0
+                height: matchesMD ? '10em' : '12em',
+                marginBottom: matchesMD ? '5em' : 0,
+                marginTop: matchesMD ? '-5em' : 0
               }}
             />
           </Grid>

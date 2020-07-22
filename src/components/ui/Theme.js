@@ -97,18 +97,19 @@ export default createMuiTheme({
     h4: {
       fontFamily: 'Proza Libre',
       fontWeight: 600,
-      fontSize: '1.6rem',
+      fontSize: '1.4rem',
       color: grey5,
       lineHeight: 1.3
     },
     h5: {
       fontFamily: 'Proza Libre',
       fontWeight: 600,
-      fontSize: '1.4rem',
+      fontSize: '1.2rem',
       color: grey5,
       lineHeight: 1.3
     },
     h6: {
+      fontSize: '1rem',
       fontWeight: 500,
       fontFamily: 'Proza Libre',
       color: grey5,
