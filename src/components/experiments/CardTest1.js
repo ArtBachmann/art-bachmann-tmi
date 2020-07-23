@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
-
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-//import revolutionBackground from '../../../assets/images/3d-background-light.jpg'
+import revolutionBackground from '../../assets/images/3d-background-light.jpg'
 import QR from '../../assets/images/artbachmann.eu.png'
-import QRHome from '../../../assets/images/art-bachmann-tmi.png'
+import QRHome from '../../assets/images/art-bachmann-tmi.png'
 import HeadlessWPFrontpage from '../../assets/images/headless-wp-frontpage-screenshot.png'
-import CafeteriaGatsbyFrontpage from '../../../assets/images/cafeteria-gatsby-frontpage-screenshot.png'
+import CafeteriaGatsbyFrontpage from '../../assets/images/cafeteria-gatsby-frontpage-screenshot.png'
 
 
 const useStyles = makeStyles(theme => ({
@@ -45,28 +46,59 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     boxShadow: theme.shadows[10],
     borderRadius: 15,
-    padding: '8em',
+    padding: '4em',
     [theme.breakpoints.down('sm')]: {
-      paddingTop: '6em',
-      paddingBottom: '6em',
+      paddingTop: '2em',
+      paddingBottom: '2em',
       paddingLeft: 0,
       paddingRight: 0,
       margin: '1rem',
       borderRadius: 0
     }
-  }
+  }, qr: {
+    marginLeft: '5em',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1em'
+    }
+  },
+
+  heroTextContainer: {
+    [theme.breakpoints.down('xl')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
+    [theme.breakpoints.down('lg')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
+    [theme.breakpoints.down('md')]: {
+      width: '80vw',
+      paddingTop: '4em'
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: '90vw',
+      paddingTop: '4em',
+    },
+  },
 }))
 
 const Revolution = () => {
   const classes = useStyles()
   const theme = useTheme()
+  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'))
+  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
+  const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <Grid container
       style={{ height: '55em', marginTop: '2em' }}
       alignItems='center'
       justify='center'>
-      <Card className={classes.revolutionCard}>
-        <CardContent>
+      <Card
+        className={classes.revolutionCard}>
+        <CardContent >
           <Grid container
             direction='column'
           >
@@ -75,6 +107,7 @@ const Revolution = () => {
               container
               justify='center'
               alignItems='center'
+              style={{ width: '20em' }}
               style={{
                 marginTop: matchesXS ? '2em' :
                   matchesSM ? '4em' : undefined
@@ -90,14 +123,20 @@ const Revolution = () => {
                 />
               </Grid>
 
-              <Grid
-                item
-                className={classes.qr}>
-                <img
-                  alt='headless wordpress front page'
-                  src={HeadlessWPFrontpage}
-                  className={classes.image} />
+              <Grid item container justify='center' sm>
+                <Link to={'/estimate/'}>
+                  <Grid item>
+                    <img
+                      alt='headless wordpress front page'
+                      src={CafeteriaGatsbyFrontpage}
+                      style={{ width: '14em' }}
+                      className={classes.image}
+                      className={classes.qr} />
+                  </Grid>
+                </Link>
               </Grid>
+
+
             </Grid>
           </Grid>
         </CardContent>

@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import revolutionBackground from '../../../assets/images/3d-background-light.jpg'
 import QR from '../../../assets/images/artbachmann.eu.png'
 import QRHome from '../../../assets/images/art-bachmann-tmi.png'
 import HeadlessWPFrontpage from '../../../assets/images/headless-wp-frontpage-screenshot.png'
@@ -17,6 +21,14 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       marginTop: '4em',
     },
+  },
+  revolutionBackground: {
+    backgroundImage: `url(${revolutionBackground})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    height: '100%',
+    width: '100%'
   },
   rowContainer: {
     paddingLeft: '4em',
@@ -36,44 +48,16 @@ const useStyles = makeStyles(theme => ({
     marginTop: '2em'
   },
 
-  qr: {
-    marginLeft: '3em',
+  revolutionCard: {
+    position: 'absolute',
+    boxShadow: theme.shadows[10],
+    borderRadius: 15,
+    padding: '1.2em',
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '1em'
+      padding: '1em',
+      margin: '1rem',
+      borderRadius: 0
     }
-  },
-
-  image: {
-
-
-    [theme.breakpoints.down('xl')]: {
-      width: '14em',
-      marginLeft: '3em',
-      marginBottom: '2em',
-    },
-
-    [theme.breakpoints.down('lg')]: {
-      width: '12em',
-      marginLeft: '3em',
-      marginBottom: '2em',
-    },
-
-    [theme.breakpoints.down('md')]: {
-      width: '14em',
-      marginLeft: '2em',
-      marginBottom: '2em',
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      width: '10em',
-      marginLeft: '1em',
-      marginBottom: '1em',
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: '8em',
-      marginLeft: '1em',
-      marginBottom: '1em',
-    },
   },
 
   heroTextContainer: {
@@ -117,7 +101,7 @@ const GraphQLBlock = () => {
         height:
           matchesXS ? '68em' :
             matchesSM ? '64em' :
-              undefined
+              '72em'
       }}
       className={classes.mainContainer}
       className={classes.background}>
@@ -129,43 +113,66 @@ const GraphQLBlock = () => {
         container
         direction='row'
         alignItems='center'
-        jutifyContent='space-evenly'
+        jutifyt='center'
+        style={{ marginBottom: '6em' }}
         className={classes.rowContainer}>
 
         <Grid
           item
           container
-          justify='center'
-          alignItems='center'
-          style={{
-            marginTop: matchesXS ? '2em' :
-              matchesSM ? '4em' : undefined
-          }}
-          lg>
-
+          md
+          justfy='center'
+          alignItems='center'>
           <Grid item>
-            <img
-              alt='qr logo'
-              src={QRHome}
-              className={classes.image}
-            />
-          </Grid>
+            <Card
+              className={classes.revolutionCard}>
+              <CardContent >
+                <Grid container>
 
-          <Grid
-            item
-            className={classes.qr}>
-            <img
-              alt='headless wordpress front page'
-              src={HeadlessWPFrontpage}
-              className={classes.image} />
+                  <Grid
+                    item
+                    container
+                    justify='center'
+                    alignItems='center'
+                    style={{
+                      marginTop: matchesXS ? '2em' :
+                        matchesSM ? '4em' : undefined
+                    }} >
+
+                    <Grid item>
+                      <img
+                        alt='qr logo'
+                        src={QRHome}
+                        style={{ width: matchesSM ? '8em' : '10em' }}
+                      />
+                    </Grid>
+
+                    <Grid item container justify='center' sm>
+                      <Link to={'/estimate/'}>
+                        <Grid item >
+                          <img
+                            alt='headless wordpress front page'
+                            src={HeadlessWPFrontpage}
+                            style={{ width: matchesSM ? '8em' : '10em' }} />
+
+                        </Grid>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
           </Grid>
+          <div className={classes.revolutionBackground} />
         </Grid>
 
-        {/* Text part of the  */}
+
+
+        {/* Text part of the First row  */}
         <Grid
           item
           container
-          lg
+          md
           direction='column'
           alignContent='center'
 
@@ -209,42 +216,15 @@ const GraphQLBlock = () => {
         direction='row'
         alignItems='center'
         className={classes.rowContainer}
-        jutifyContent='space-evenly'>
+        jutifyContent='center'>
 
+        {/* <div className={classes.revolutionBackground} /> */}
+
+        {/* Text Section  */}
         <Grid
           item
           container
-          justify='center'
-          alignItems='center'
-          style={{
-            marginTop: matchesXS ? '2em' :
-              matchesSM ? '4em' : undefined
-          }}
-          lg>
-
-          <Grid item>
-            <img
-              alt='qr logo'
-              src={QRHome}
-              className={classes.image}
-            />
-          </Grid>
-
-          <Grid
-            item
-            className={classes.qr}>
-            <img
-              alt='headless wordpress front page'
-              src={HeadlessWPFrontpage}
-              className={classes.image} />
-          </Grid>
-        </Grid>
-
-        {/* Text part of the  */}
-        <Grid
-          item
-          container
-          lg
+          md
           direction='column'
           alignContent='center'
           style={{
@@ -270,6 +250,54 @@ const GraphQLBlock = () => {
               ! Lataa älypuhmilla qrkoodin avulla vieressä oleva sivusto ja katso miten ennennäkömäton nopeasti saa siellä liikkua vaikka on paljon kuvia. Lisäksi jos se sattuu oleman Sinun lemmikki ravintola saat laitta sen ikonin puhelimenn ja avata suoran sielta niin kui native appin..
             </Typography>
           </Grid>
+        </Grid>
+
+        {/* Card Section */}
+
+        <Grid
+          item
+          container
+          md
+          justfy='center'
+          alignItems='center'>
+          <Card
+            className={classes.revolutionCard}>
+            <CardContent >
+              <Grid container>
+                <Grid
+                  item
+                  container
+                  justify='center'
+                  alignItems='center'
+                  style={{
+                    marginTop: matchesXS ? '2em' :
+                      matchesSM ? '4em' : undefined
+                  }}>
+
+
+                  <Grid item>
+                    <img
+                      alt='qr logo'
+                      src={QR}
+                      style={{ width: matchesSM ? '8em' : '10em' }}
+                    />
+                  </Grid>
+
+                  <Grid item container justify='center' sm>
+                    <Link to={'/estimate/'}>
+                      <Grid item >
+                        <img
+                          alt='headless wordpress front page'
+                          src={CafeteriaGatsbyFrontpage}
+                          style={{ width: matchesSM ? '8em' : '10em' }}
+                        />
+                      </Grid>
+                    </Link>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
 
