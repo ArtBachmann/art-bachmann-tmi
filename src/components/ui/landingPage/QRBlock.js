@@ -37,11 +37,62 @@ const useStyles = makeStyles(theme => ({
   },
 
   qr: {
-    marginLeft: '2em',
-    [theme.breakpoints.down('xs')]: {
-      marginLeft: '0,3em'
+    marginLeft: '5em',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '1em'
     }
   },
+
+  heroTextContainer: {
+    [theme.breakpoints.down('xl')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
+    [theme.breakpoints.down('lg')]: {
+      width: '40vw',
+      paddingTop: '4em',
+    },
+
+    [theme.breakpoints.down('md')]: {
+      width: '80vw',
+      paddingTop: '4em'
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: '90vw',
+      paddingTop: '4em',
+    },
+  },
+  image: {
+    width: '14em',
+    marginLeft: '3em',
+    marginBottom: '2em',
+
+    [theme.breakpoints.down('xl')]: {
+      width: '14em',
+      marginLeft: '3em',
+      marginBottom: '2em',
+    },
+
+    [theme.breakpoints.down('lg')]: {
+      width: '12em',
+      marginLeft: '3em',
+      marginBottom: '2em',
+    },
+
+    [theme.breakpoints.down('md')]: {
+      width: '10em',
+      marginLeft: '2em',
+      marginBottom: '2em',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: '8em',
+      marginLeft: '1em',
+      marginBottom: '1em',
+    },
+  }
 }))
 
 const GraphQLBlock = () => {
@@ -52,110 +103,102 @@ const GraphQLBlock = () => {
   const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <Grid container
-      direction='row'
-      style={{ height: '36em' }}
-      justify='center'
+
+    // Container holding the whole component
+    <Grid
+      container
+      direction={matchesMD ? 'column' : 'row'}
+      style={{ height: '42em' }}
+      //justify='space-around'
       alignItems='center'
       className={classes.background}>
 
-      <Grid item
+
+      {/* Container holding two QR blocks */}
+      <Grid
+        item
         container
-        style={{
-          textAlign: matchesXS ? 'center' : 'inherit'
-        }}
-        direction={matchesXS ? 'column' : 'row'}
-        spacing={matchesXS ? 8 : 'inherit'}>
+        md
+        justify='center'
+        alignItems='center'>
+
 
         {/* Left side Logo block */}
         <Grid
           item
-          md
-          className={classes.qr}
-        >
-          <Grid item container
+          className={classes.qr} >
+
+
+          <Grid
+            item
+            container
             justify='center'
             alignItems='center'
-            direction='row'>
+            direction='row' >
 
-            <Grid sm item container direction='column'>
+            {/* First qr block */}
+            <Grid item container md direction='column'>
               <img
                 alt='qr logo'
                 src={QRHome}
-                style={{
-                  width: '14em',
-                  maxWidth: matchesSM ? 100 : '14em',
-                  marginLeft: matchesMD ? 1 : '3em',
-                  marginBottom: matchesMD ? '5em' : 0
-                }}
+                className={classes.image}
               />
 
               <img
                 alt='headless wordpress front page'
                 src={HeadlessWPFrontpage}
-                style={{
-                  width: '14em',
-                  maxWidth: matchesSM ? 100 : '14em',
-                  marginLeft: matchesMD ? 1 : '3em',
-                  marginBottom: matchesMD ? '5em' : 0
-                }}
-              />
+                className={classes.image} />
             </Grid>
 
-            <Grid sm item container direction='column'>
+            {/* Second qr block */}
+            <Grid item container md direction='column'>
               <img
                 alt='qr logo'
                 src={QR}
-                style={{
-                  width: '14em',
-                  maxWidth: matchesSM ? 100 : '14em',
-                  marginBottom: matchesMD ? '5em' : 0,
-                  marginLeft: matchesMD ? 1 : '3em'
-                }}
-              />
+                className={classes.image} />
 
               <img
                 alt='headless wordpress front page'
                 src={CafeteriaGatsbyFrontpage}
-                style={{
-                  width: '14em',
-                  maxWidth: matchesSM ? 100 : '14em',
-                  marginLeft: matchesMD ? 1 : '3em',
-                  marginBottom: matchesMD ? '5em' : 0
-                }}
-              />
-            </Grid>
-          </Grid>
-        </Grid>
-
-        {/* Right side text block */}
-
-        <Grid item
-          md
-          style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
-
-          <Grid container
-            justify='flex-end'
-            alignItems='center'
-            direction='row'>
-            <Grid sm item
-              className={classes.heroTextContainer}
-            >
-              <Typography variant='body1'
-                gutterBottom
-                style={{ textIndent: '2em' }}>
-                Gatsby.js rakentaa nopeimman mahdollisen verkkosivuston. Sen sijaan, että odottaisit sivujen luomista pyynnöstä, rakenna sivut esille ja nosta ne globaaliin palvelinpilveen - valmiina toimittamaan heti käyttäjillesi missä he ovat.
-            </Typography>
-              <Typography variant='body1'
-                gutterBottom
-                style={{ textIndent: '2em' }}>
-                Älä tilaa verkkosivustoa, jolla on edellisen vuosikymmenen tekniikkaa. Verkon tulevaisuus on mobiili, JavaScript ja sovellusliittymät. Jokainen verkkosivusto on verkkosovellus ja jokainen verkkosovellus on verkkosivusto. Gatsby.js on yleinen JavaScript-kehys, jota olet odottanut.
-            </Typography>
-
+                className={classes.image} />
             </Grid>
           </Grid>
         </Grid>
       </Grid>
+
+
+
+
+      {/* Right side text block */}
+
+      <Grid item
+        md
+        style={{ marginLeft: matchesXS ? 0 : matchesSM ? '2em' : '5em' }}>
+
+        <Grid container>
+
+          <Grid
+            item
+            container
+            justify='center'
+            alignItems='center'
+            className={classes.heroTextContainer}>
+
+            <Typography variant='body1'
+              gutterBottom
+              style={{ textIndent: '1em' }}>
+              Gatsby.js rakentaa nopeimman mahdollisen verkkosivuston. Sen sijaan, että odottaisit sivujen luomista pyynnöstä, rakenna sivut esille ja nosta ne globaaliin palvelinpilveen - valmiina toimittamaan heti käyttäjillesi missä he ovat.
+              </Typography>
+            <Typography variant='body1'
+              gutterBottom
+              style={{ textIndent: '1em' }}>
+              Älä tilaa verkkosivustoa, jolla on edellisen vuosikymmenen tekniikkaa. Verkon tulevaisuus on mobiili, JavaScript ja sovellusliittymät. Jokainen verkkosivusto on verkkosovellus ja jokainen verkkosovellus on verkkosivusto. Gatsby.js on yleinen JavaScript-kehys, jota olet odottanut.
+              </Typography>
+
+          </Grid>
+        </Grid>
+      </Grid>
+
     </Grid>
 
 

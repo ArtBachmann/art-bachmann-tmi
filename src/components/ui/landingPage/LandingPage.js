@@ -3,7 +3,8 @@ import LandingBlock from './LandingBlock'
 import ServicesBlock from './ServicesBlock.js'
 import RevolutionBlock from './RevolutionkBlock'
 import GraphQLBlock from './GraphQLBlock'
-import QR from './QRBlock'
+import QR from './QRBlocks'
+import CardTest1 from '../../experiments/CardTest1'
 
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <ServicesBlock />
       <GraphQLBlock />
       <RevolutionBlock />
+      <CardTest1 />
     </div>
   )
 }

@@ -139,7 +139,7 @@ const LandingBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: '80em' }}
+      style={{ height: matchesSM ? '62em' : '68em' }}
       justify='center'
       alignItems='flex-start'
       className={classes.infoBackground}>
@@ -178,7 +178,7 @@ const LandingBlock = () => {
           className={classes.devices} />
       </Grid>
 
-
+      {/* spacing={matchesMD ? 8 : 'inherit'} */}
       <Grid item
         container
         style={{
@@ -187,7 +187,8 @@ const LandingBlock = () => {
           marginTop: '-8em',
         }}
         direction={matchesMD ? 'column' : 'row'}
-        spacing={matchesMD ? 8 : 'inherit'}>
+        justify='space-around'  >
+
 
         {/* Left side text block */}
         <Grid
@@ -285,7 +286,7 @@ const LandingBlock = () => {
               style={{
                 height: matchesMD ? '10em' : '12em',
                 marginBottom: matchesMD ? '5em' : 0,
-                marginTop: matchesMD ? '-5em' : 0
+                marginTop: matchesMD ? '2em' : 0
               }}
             />
           </Grid>
