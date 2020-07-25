@@ -1,11 +1,14 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import SolutionsPage from '../components/ui/solutionsPage/SolutionsPage'
+import Implementation from '../components/ui/implementationPage/Implementation'
 
-const IndexPage = () => (
-  <Layout>
-    <SolutionsPage />
-  </Layout>
-)
 
-export default IndexPage
+const toteutus = () => {
+  return (
+    <Layout>
+      <Implementation />
+    </Layout>
+  )
+}
+
+export default toteutus

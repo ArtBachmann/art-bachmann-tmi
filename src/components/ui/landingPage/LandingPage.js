@@ -1,9 +1,10 @@
 import React from 'react'
 import LandingBlock from './LandingBlock'
-import ServicesBlock from './ServicesBlock.js'
-import RevolutionBlock from './RevolutionkBlock'
-import GraphQLBlock from './GraphQLBlock'
-import QR from './QRBlock'
+// import ServicesBlock from './ServicesBlock.js'
+// import RevolutionBlock from './RevolutionkBlock'
+// import GraphQLBlock from './GraphQLBlock'
+import QR from './QRTest1'
+//import CardTest1 from '../../experiments/CardTest1'
 
 
 const LandingPage = () => {
@@ -11,9 +12,10 @@ const LandingPage = () => {
     <div>
       <LandingBlock />
       <QR />
-      <ServicesBlock />
+      {/* <ServicesBlock />
       <GraphQLBlock />
       <RevolutionBlock />
+      <CardTest1 /> */}
     </div>
   )
 }
