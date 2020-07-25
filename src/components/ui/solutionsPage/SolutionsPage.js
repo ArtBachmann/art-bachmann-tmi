@@ -33,6 +33,9 @@ import { mdiCodeTagsCheck } from '@mdi/js';
 // Iterate
 import { mdiCalendarSyncOutline } from '@mdi/js';
 
+// Office Icons
+import { PeopleSittingAroundTable } from '../../../assets/images/oi-people-sitting.png'
+
 
 const useStyles = makeStyles(theme => ({
   rowContainer: {
