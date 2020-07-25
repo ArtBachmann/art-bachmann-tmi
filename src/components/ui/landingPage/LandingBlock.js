@@ -139,7 +139,10 @@ const LandingBlock = () => {
   return (
     <Grid container
       direction='row'
-      style={{ height: matchesSM ? '62em' : '68em' }}
+      style={{
+        height: matchesSM ? '64em'
+          : matchesMD ? '72em' : '62em'
+      }}
       justify='center'
       alignItems='flex-start'
       className={classes.infoBackground}>
@@ -151,14 +154,13 @@ const LandingBlock = () => {
         className={classes.rowContainer}
         style={{
           maxWidth: matchesXS ? 400 : '56em',
-          paddingTop: matchesSM ? '4em' : '6em'
+          paddingTop: matchesSM ? '4em' : '10em'
         }}>
 
         <Typography
           variant={
-            matchesXS ? 'h6' :
-              matchesSM ? 'h5' :
-                matchesMD ? 'h4' : 'h1'}
+            matchesSM ? 'h5' :
+              matchesMD ? 'h2' : 'h2'}
           align='center'
         >
           Yksi sisällönhallintajärjestelmä,
@@ -171,7 +173,10 @@ const LandingBlock = () => {
         container
         justify='center'
         alignItems='flex-start'
-        style={{ marginTop: matchesSM ? '-2em' : matchesMD ? 0 : '-6em' }}
+        style={{
+          marginTop: matchesSM ? '-2em' : 0,
+          marginBottom: '6em'
+        }}
       >
         <img alt='possible devices for headless wordpress'
           src={devices}

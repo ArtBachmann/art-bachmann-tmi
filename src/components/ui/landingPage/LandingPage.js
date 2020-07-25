@@ -3,7 +3,7 @@ import LandingBlock from './LandingBlock'
 // import ServicesBlock from './ServicesBlock.js'
 // import RevolutionBlock from './RevolutionkBlock'
 // import GraphQLBlock from './GraphQLBlock'
-import QR from './QRBlocks'
+import QR from './QRTest1'
 //import CardTest1 from '../../experiments/CardTest1'
 
 

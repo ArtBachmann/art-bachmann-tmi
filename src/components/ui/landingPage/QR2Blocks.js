@@ -2,12 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import { flexbox } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import Box from '@material-ui/core/Box';
 import revolutionBackground from '../../../assets/images/3d-background-light.jpg'
 import QR from '../../../assets/images/artbachmann.eu.png'
 import QRHome from '../../../assets/images/art-bachmann-tmi.png'
@@ -51,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   revolutionCard: {
-    position: 'flex',
+    position: 'absolute',
     boxShadow: theme.shadows[10],
     borderRadius: 15,
     padding: '1.2em',
@@ -91,9 +89,17 @@ const useStyles = makeStyles(theme => ({
       order: 1,
     },
   },
+  card: {
+    [theme.breakpoints.down('md')]: {
+      justifySelf: 'center',
+      alignContent: 'center',
+      marginBottom: '4em'
+    },
+  }
+
 }))
 
-const QRBlocks = () => {
+const GraphQLBlock = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'))
@@ -105,81 +111,36 @@ const QRBlocks = () => {
     <Grid
       container
       direction='column'
-      className={classes.mainContainer}
-      className={classes.background}
+      justify='center'
       style={{
         height:
           matchesXS ? '68em' :
             matchesSM ? '64em' :
-              '92em'
-      }}>
+              '72em'
+      }}
+      className={classes.mainContainer}
+      className={classes.background}>
+
 
       {/* First Row QR Block */}
-
       <Grid
         item
         container
         direction='row'
-        justify='space-around'
-        alignContent='center'
-        className={classes.rowContainer}>
+        alignItems='center'
+        jutifyContent='center'
+        className={classes.rowContainer}
+        style={{ marginBottom: '10em' }}>
 
-        <Grid item xs={6}>
-          <div style={{ width: '100%' }}>
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="center"
-              alignItems='flex-start'
-              p={1}
-              bgcolor="background.paper">
-              <Card
-                className={classes.revolutionCard}>
-                <CardContent >
-                  <Grid container>
-                    <Grid
-                      item
-                      container
-                      justify='center'
-                      alignItems='center'
-                      style={{
-                        marginTop: matchesXS ? '2em' :
-                          matchesSM ? '4em' : undefined
-                      }}>
 
-                      <Grid item>
-                        <img
-                          alt='qr logo'
-                          src={QRHome}
-                          style={{ width: matchesSM ? '8em' : '10em' }}
-                        />
-                      </Grid>
-
-                      <Grid item container justify='center' sm>
-                        <Link to={'/'}>
-                          <Grid item >
-                            <img
-                              alt='headless wordpress front page'
-                              src={HeadlessWPFrontpage}
-                              style={{ width: matchesSM ? '8em' : '10em' }}
-                            />
-                          </Grid>
-                        </Link>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </CardContent>
-              </Card>
-            </Box>
-          </div>
-        </Grid>
-
+        {/* Text Section First Row */}
         <Grid
           item
           container
-          xs={6}
+          md
           direction='column'
           alignContent='center'
+          className={classes.item1}
           style={{
             marginLeft: matchesSM ? 0 : '5em',
             marginRight: matchesSM ? 0 : '5em',
@@ -204,21 +165,69 @@ const QRBlocks = () => {
             </Typography>
           </Grid>
         </Grid>
+
+        {/* Card Section First Row*/}
+
+        <Grid
+          item
+          container
+          md
+          justfy='center'
+          alignItems='center'
+          className={classes.card}
+          className={classes.item2}
+        >
+          <Card
+            className={classes.card}
+            className={classes.revolutionCard}>
+            <CardContent >
+              <Grid container>
+                <Grid
+                  item
+                  container
+                  justify='center'
+                  alignItems='center'
+                  style={{
+                    marginTop: matchesXS ? '2em' :
+                      matchesSM ? '4em' : undefined
+                  }}>
+
+                  <Grid item>
+                    <img
+                      alt='qr logo'
+                      src={QRHome}
+                      style={{ width: matchesSM ? '8em' : '10em' }}
+                    />
+                  </Grid>
+
+                  <Grid item container justify='center' sm>
+                    <Link to={'/'}>
+                      <Grid item >
+                        <img
+                          alt='headless wordpress front page'
+                          src={HeadlessWPFrontpage}
+                          style={{ width: matchesSM ? '8em' : '10em' }}
+                        />
+                      </Grid>
+                    </Link>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
 
 
 
-
-
-      {/* Second Row QR Block */}
+      {/* Second QR Row Block */}
       <Grid
         item
         container
         direction='row'
         alignItems='center'
-        jutifyContent='center'
         className={classes.rowContainer}
-      >
+        jutifyContent='center'>
 
 
         {/* Text Section >> Second Row */}
@@ -254,56 +263,59 @@ const QRBlocks = () => {
           </Grid>
         </Grid>
 
+        {/* Card Section Second Row */}
 
-        {/* Second Box Block */}
-        <div style={{ width: '30%' }}>
-          <Box md display="flex" flexDirection="row" justifyContent="center" p={1} bgcolor="background.paper">
-            <Card
-              className={classes.revolutionCard}>
-              <CardContent >
-                <Grid container>
-                  <Grid
-                    item
-                    container
-                    justify='center'
-                    alignItems='center'
-                    style={{
-                      marginTop: matchesXS ? '2em' :
-                        matchesSM ? '4em' : undefined
-                    }}>
+        <Grid
+          item
+          container
+          md
+          justfy='center'
+          alignItems='center'
+          className={classes.item2}
+        >
+          <Card
+            className={classes.revolutionCard}>
+            <CardContent >
+              <Grid container>
+                <Grid
+                  item
+                  container
+                  justify='center'
+                  alignItems='center'
+                  style={{
+                    marginTop: matchesXS ? '2em' :
+                      matchesSM ? '4em' : undefined
+                  }}>
 
-                    <Grid item>
-                      <img
-                        alt='qr logo'
-                        src={QRHome}
-                        style={{ width: matchesSM ? '8em' : '10em' }}
-                      />
-                    </Grid>
 
-                    <Grid item container justify='center' sm>
-                      <Link to={'/'}>
-                        <Grid item >
-                          <img
-                            alt='headless wordpress front page'
-                            src={HeadlessWPFrontpage}
-                            style={{ width: matchesSM ? '8em' : '10em' }}
-                          />
-                        </Grid>
-                      </Link>
-                    </Grid>
+                  <Grid item>
+                    <img
+                      alt='qr logo'
+                      src={QR}
+                      style={{ width: matchesSM ? '8em' : '10em' }}
+                    />
+                  </Grid>
+
+                  <Grid item container justify='center' sm>
+                    <Link to={'/ominaisuudet/'}>
+                      <Grid item >
+                        <img
+                          alt='headless wordpress front page'
+                          src={CafeteriaGatsbyFrontpage}
+                          style={{ width: matchesSM ? '8em' : '10em' }}
+                        />
+                      </Grid>
+                    </Link>
                   </Grid>
                 </Grid>
-              </CardContent>
-            </Card>
-          </Box>
-        </div>
-
+              </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
-
 
     </Grid>
   )
 }
 
-
-export default QRBlocks
+export default GraphQLBlock
