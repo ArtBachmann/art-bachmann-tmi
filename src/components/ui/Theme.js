@@ -46,7 +46,11 @@ export default createMuiTheme({
       sea_foam: `${sea_foam}`,
       green5: `${green5}`,
       aqua3dark: `${aqua3dark}`,
+<<<<<<< HEAD
       aqua3light: `${aqua3light}`,
+=======
+      aqua3light: `${aqua3light}`
+>>>>>>> solutions
 
     },
     primary: {

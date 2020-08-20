@@ -18,6 +18,7 @@ import mobileBackground from '../../../assets/svg/Pattern-Randomized.svg'
 import phoneIcon from '../../../assets/svg/phone.svg'
 import emailIcon from '../../../assets/svg/email.svg'
 import airplane from '../../../assets/svg/send.svg'
+import Art from '../../../assets/images/artbachmann.jpg'
 
 
 
@@ -459,6 +460,7 @@ export default function Contact(props) {
             backgroundColor: alert.color
           }
         }}
+<<<<<<< HEAD
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         message={alertMessage}
         autoHideDuration={4000}
@@ -473,6 +475,16 @@ export default function Contact(props) {
         className={classes.background}
         alignItems="center"
         justify={matchesMD ? "center" : undefined}
+=======
+        onClose={() => setAlert({ ...alert, open: false })}
+        autoHideDuration={4000} />
+
+
+
+      {/* Right side column starts */}
+
+      <Grid item container
+>>>>>>> solutions
         lg={8}
         xl={9}
       >
@@ -491,6 +503,7 @@ export default function Contact(props) {
                 Vallankumoukselliset tulokset.
               </Typography>
               <Typography
+<<<<<<< HEAD
                 align={matchesMD ? "center" : undefined}
                 variant="subtitle2"
                 style={{ fontSize: "1.5rem" }}
@@ -506,6 +519,44 @@ export default function Contact(props) {
                     src={Art}
                     className={classes.photo} />
                 </Grid>
+=======
+                variant='h3'
+                align={matchesMD ? 'center' : undefined}>
+                Simple Software. <br /> Revolutionary Results.
+            </Typography>
+              <Typography
+                variant='subtitle2'
+                align={matchesMD ? 'center' : undefined}
+                style={{ fontSize: '1.4rem', marginBottom: '1.6em' }}>
+                Take advantage of the 21st century.
+            </Typography>
+              <Grid item lg>
+                <img
+                  src={Art}
+                  alt="headless wordpress workflow"
+                  style={{
+                    width: '18em',
+                    maxWidth: matchesSM ? 300 : "16em",
+                    marginRight: matchesMD ? 0 : "5em",
+                    marginBottom: matchesMD ? "5em" : 0
+                  }}
+                />
+              </Grid>
+              <Grid container item
+                justify={matchesMD ? 'center' : 'undefined'}>
+                <Button
+                  variant='outlined'
+                  className={classes.learnButton}>
+                  <span>
+                    Learn More
+                  </span>
+                  <ButtonArrow
+                    width={15}
+                    height={15}
+                    fill={theme.palette.common.gray4}
+                  />
+                </Button>
+>>>>>>> solutions
               </Grid>
             </Grid>
           </Grid>

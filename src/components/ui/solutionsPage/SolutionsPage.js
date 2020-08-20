@@ -309,9 +309,14 @@ const Revolution = () => {
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
+<<<<<<< HEAD
         alignItems='center'
         justify={matchesMD ? "center" : undefined}
         style={{ backgroundColor: "#d5d8dc", height: "38em" }}>
+=======
+        justify={matchesMD ? "center" : 'center'}
+        style={{ backgroundColor: "#BDBDBD", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -327,11 +332,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Konsultointi
             </Typography>
@@ -340,6 +349,7 @@ const Revolution = () => {
           <Grid
             item
             container
+<<<<<<< HEAD
             justify='center'
             alignItems='center'
             className={classes.item2}>
@@ -351,6 +361,20 @@ const Revolution = () => {
               paragraph
             >
               Kun olemme asettuneet parhaalle tielle eteenpäin ja päätämme ratkaisusta, jota jatkaa, yksityiskohdat, kuten kustannukset ja aikataulu, viimeistellään.
+=======
+            alignItems='center'>
+            <Typography
+              variant="body1"
+              align={matchesMD ? "center" : undefined}
+              style={{ color: "#fff", maxWidth: "20em" }}
+              paragraph
+            >
+              Our process begins the moment you realize you need a piece of
+              technology for your business. Whether you already have an idea for
+              where to start and what to do, or if you just know you want to
+              step things up, our initial consultation will help you examine
+              your business holistically to find the best solutions.
+>>>>>>> solutions
             </Typography>
             <Typography
               variant={matchesSM ? 'body2' : 'body1'}
@@ -358,7 +382,13 @@ const Revolution = () => {
               style={{ color: "#274549" }}
               paragraph
             >
+<<<<<<< HEAD
               Sitten meidän on aika aloittaa vähimmäiskykyisellä tuotteellasi. Se on vain kuvitteellinen termi mallille, joka ei sisällä värejä, kuvia tai muita kiillotettuja muotoiluelementtejä, mutta sisältää tärkeän asettelurakenteen ja toiminnallisuuden.
+=======
+              Detailed notes will be taken on your requirements and constraints,
+              while taking care to identify other potential areas for
+              consideration.
+>>>>>>> solutions
             </Typography>
           </Grid>
         </Grid>
@@ -366,6 +396,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           alignItems='center'
@@ -380,19 +411,34 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
 
 
       {/* 2. Section: Malli */}
+      {/* Texts in english must be looked over because double the previous ones... */}
       <Grid
         item
         container
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#f5f5f5", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#757575", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -408,13 +454,17 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
-              Mockup
+              Malli
             </Typography>
           </Grid>
           <Grid
@@ -447,6 +497,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -459,6 +510,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
@@ -486,11 +547,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#fff",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Review
             </Typography>
@@ -521,6 +586,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -533,6 +599,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
@@ -544,7 +620,11 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#dae1e2", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#274549", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -560,11 +640,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Design
             </Typography>
@@ -592,6 +676,7 @@ const Revolution = () => {
           </Grid>
         </Grid>
 
+<<<<<<< HEAD
         <Grid
           item
           container
@@ -606,11 +691,27 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+
+        <Grid
+          item
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> solutions
       {/* Build Section */}
       <Grid
         item
@@ -618,7 +719,11 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#e0dede", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#CFD8DC", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -634,11 +739,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Build
             </Typography>
@@ -670,6 +779,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -682,6 +792,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
@@ -694,7 +814,11 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#f3f3f3", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#607D8B", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -709,11 +833,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Launch
             </Typography>
@@ -744,6 +872,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -756,6 +885,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
@@ -768,7 +907,11 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#607D8B", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#455A64", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -784,11 +927,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#fff",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Maintain
             </Typography>
@@ -820,6 +967,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -832,6 +980,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
@@ -843,7 +1001,11 @@ const Revolution = () => {
         direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         justify={matchesMD ? "center" : 'center'}
+<<<<<<< HEAD
         style={{ backgroundColor: "#c1cbcd", height: "42em" }}>
+=======
+        style={{ backgroundColor: "#a5c0ad", height: "42em" }}>
+>>>>>>> solutions
 
         <Grid
           item
@@ -859,11 +1021,15 @@ const Revolution = () => {
               align='center'
               variant="h4"
               gutterBottom
+<<<<<<< HEAD
               style={{
                 color: "#274549",
                 marginTop: matchesMD ? 0 : "1em",
                 marginLeft: '2em'
               }}
+=======
+              style={{ color: "#000", marginTop: matchesMD ? 0 : "1em" }}
+>>>>>>> solutions
             >
               Iterate
             </Typography>
@@ -894,6 +1060,7 @@ const Revolution = () => {
 
         <Grid
           item
+<<<<<<< HEAD
           container
           justify='center'
           style={{ alignSelf: "center" }}
@@ -906,6 +1073,16 @@ const Revolution = () => {
               color: '#80a8aa',
               marginTop: matchesMD ? '2em' : undefined
             }}
+=======
+          lg
+          alignItems={matchesMD ? "center" : undefined}
+          style={{ alignSelf: "center" }}>
+          <img
+            src={JAMstack}
+            width="100%"
+            alt="basic website design outline"
+            style={{ maxWidth: 1000, marginTop: '4em' }}
+>>>>>>> solutions
           />
         </Grid>
       </Grid>
