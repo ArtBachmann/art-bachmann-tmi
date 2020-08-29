@@ -20,15 +20,15 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     typeName: 'WordPressArt',
-    //     fieldName: 'wordPressArt',
-    //     url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
-    //     refetchInterval: 60
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'WordPressArt',
+        fieldName: 'wordPressArt',
+        url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
+        refetchInterval: 60
+      }
+    },
 
     // {
     //   resolve: 'gatsby-source-wordpress',
@@ -59,12 +59,8 @@ module.exports = {
     //   resolve: `gatsby-source-wordpress-experimental`,
     //   options: {
     //     url:
-<<<<<<< HEAD
-    //       `'http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
-=======
     //       process.env.WPGRAPHQL_URL ||
     //       `http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
->>>>>>> palvelut
     //     verbose: true,
     //     useACF: true,
     //     schema: {
@@ -98,10 +94,6 @@ module.exports = {
     //       "**/tags",
     //       "**/taxonomies",
     //       "**/users",
-<<<<<<< HEAD
-    //       "**/menus",
-=======
->>>>>>> palvelut
     //     ],
 
     //     excludeFields: [`blocksJSON`, `saveContent`],

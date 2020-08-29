@@ -12,13 +12,14 @@ import DialogContent from '@material-ui/core/DialogContent'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Snackbar from '@material-ui/core/Snackbar'
 
-import Art from '../../../assets/images/artbachmann_medium.jpg'
+//import Art from '../../../assets/images/artbachmann_medium.jpg'
 import background from '../../../assets/svg/Pattern-Randomized.svg'
 import mobileBackground from '../../../assets/svg/Pattern-Randomized.svg'
 import phoneIcon from '../../../assets/svg/phone.svg'
 import emailIcon from '../../../assets/svg/email.svg'
 import airplane from '../../../assets/svg/send.svg'
 import Art from '../../../assets/images/artbachmann.jpg'
+import ButtonArrow from '../../original'
 
 
 
@@ -460,22 +461,6 @@ export default function Contact(props) {
             backgroundColor: alert.color
           }
         }}
-<<<<<<< HEAD
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        message={alertMessage}
-        autoHideDuration={4000}
-        onClose={() => setAlert(false)}
-      />
-
-
-      <Grid
-        item
-        container
-        direction={matchesMD ? "column" : "row"}
-        className={classes.background}
-        alignItems="center"
-        justify={matchesMD ? "center" : undefined}
-=======
         onClose={() => setAlert({ ...alert, open: false })}
         autoHideDuration={4000} />
 
@@ -484,7 +469,6 @@ export default function Contact(props) {
       {/* Right side column starts */}
 
       <Grid item container
->>>>>>> solutions
         lg={8}
         xl={9}
       >
@@ -503,23 +487,6 @@ export default function Contact(props) {
                 Vallankumoukselliset tulokset.
               </Typography>
               <Typography
-<<<<<<< HEAD
-                align={matchesMD ? "center" : undefined}
-                variant="subtitle2"
-                style={{ fontSize: "1.5rem" }}
-              >
-                Hyödynnä 21. vuosisataa.
-              </Typography>
-
-              {/* Photo About me */}
-
-              <Grid container justify={matchesMD ? "center" : undefined} item>
-                <Grid item >
-                  <img alt='art bachmann'
-                    src={Art}
-                    className={classes.photo} />
-                </Grid>
-=======
                 variant='h3'
                 align={matchesMD ? 'center' : undefined}>
                 Simple Software. <br /> Revolutionary Results.
@@ -556,7 +523,6 @@ export default function Contact(props) {
                     fill={theme.palette.common.gray4}
                   />
                 </Button>
->>>>>>> solutions
               </Grid>
             </Grid>
           </Grid>
