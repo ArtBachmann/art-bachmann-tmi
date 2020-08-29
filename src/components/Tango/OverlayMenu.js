@@ -11,26 +11,23 @@ const OverlayMenu = ({ menuOpen, callback }) => {
     },
   } = useStaticQuery(
     graphql`
-      query OverlayMenu {
-        menu: allWordpressMenusMenusItems(
-          filter: { wordpress_id: { eq: 2 } }
-        ) {
-          totalCount
-          edges {
-            node {
-              items {
-                title
+      query HeaderQuery {    
+      menu: wordPressArt {
+        menus {
+          nodes {
+            menuItems {
+              nodes {
                 url
-                child_items {
-                title
-                url
-                 }
+                label
               }
-            name
             }
           }
         }
+        generalSettings {
+          url
+        }
       }
+      }    
     `
   );
 

@@ -4,7 +4,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import revolutionBackground from '../assets/images/3d-background-light.jpg'
+//import revolutionBackground from '../assets/images/3d-background-light.jpg'
 import UC from '../assets/images/under-construction.png'
 
 const useStyles = makeStyles(theme => ({

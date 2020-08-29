@@ -30,36 +30,41 @@ module.exports = {
     //   }
     // },
 
-    {
-      resolve: 'gatsby-source-wordpress',
-      options: {
-        minimizeDeprecationNotice: true,
-        includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/users",
-          "**/menus",
-        ],
-        baseUrl: 'test.artbachmann.fi/art-bachmann-tmi',
-        protocol: 'http',
-        hostingWPCOM: false,
-        useACF: true,
-        searchAndReplaceContentUrls: {
-          sourceUrl: 'http://test.artbachmann.fi/art-bachmann-tmi',
-          replacementUrl: '',
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-wordpress',
+    //   options: {
+    //     minimizeDeprecationNotice: true,
+    //     includedRoutes: [
+    //       "**/categories",
+    //       "**/posts",
+    //       "**/pages",
+    //       "**/media",
+    //       "**/tags",
+    //       "**/taxonomies",
+    //       "**/users",
+    //       "**/menus",
+    //     ],
+    //     baseUrl: 'test.artbachmann.fi/art-bachmann-tmi',
+    //     protocol: 'http',
+    //     hostingWPCOM: false,
+    //     useACF: true,
+    //     searchAndReplaceContentUrls: {
+    //       sourceUrl: 'http://test.artbachmann.fi/art-bachmann-tmi',
+    //       replacementUrl: '',
+    //     },
+    //   },
+    // },
 
     // {
     //   resolve: `gatsby-source-wordpress-experimental`,
     //   options: {
     //     url:
+<<<<<<< HEAD
     //       `'http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
+=======
+    //       process.env.WPGRAPHQL_URL ||
+    //       `http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
+>>>>>>> palvelut
     //     verbose: true,
     //     useACF: true,
     //     schema: {
@@ -93,7 +98,10 @@ module.exports = {
     //       "**/tags",
     //       "**/taxonomies",
     //       "**/users",
+<<<<<<< HEAD
     //       "**/menus",
+=======
+>>>>>>> palvelut
     //     ],
 
     //     excludeFields: [`blocksJSON`, `saveContent`],
