@@ -8,8 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-netlify-cache`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     {
