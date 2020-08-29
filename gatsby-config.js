@@ -18,40 +18,39 @@ module.exports = {
       },
     },
 
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'WordPressArt',
-        fieldName: 'wordPressArt',
-        url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
-        refetchInterval: 60
-      }
-    },
-
     // {
-    //   resolve: 'gatsby-source-wordpress',
+    //   resolve: 'gatsby-source-graphql',
     //   options: {
-    //     minimizeDeprecationNotice: true,
-    //     includedRoutes: [
-    //       "**/categories",
-    //       "**/posts",
-    //       "**/pages",
-    //       "**/media",
-    //       "**/tags",
-    //       "**/taxonomies",
-    //       "**/users",
-    //       "**/menus",
-    //     ],
-    //     baseUrl: 'test.artbachmann.fi/art-bachmann-tmi',
-    //     protocol: 'http',
-    //     hostingWPCOM: false,
-    //     useACF: true,
-    //     searchAndReplaceContentUrls: {
-    //       sourceUrl: 'http://test.artbachmann.fi/art-bachmann-tmi',
-    //       replacementUrl: '',
-    //     },
-    //   },
+    //     typeName: 'WordPressArt',
+    //     fieldName: 'wordPressArt',
+    //     url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
+    //     refetchInterval: 60
+    //   }
     // },
+
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        minimizeDeprecationNotice: true,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+          "**/users",
+        ],
+        baseUrl: 'test.artbachmann.fi/art-bachmann-tmi',
+        protocol: 'http',
+        hostingWPCOM: false,
+        useACF: true,
+        searchAndReplaceContentUrls: {
+          sourceUrl: 'http://test.artbachmann.fi/art-bachmann-tmi',
+          replacementUrl: '',
+        },
+      },
+    },
 
     // {
     //   resolve: `gatsby-source-wordpress-experimental`,

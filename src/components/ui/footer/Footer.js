@@ -33,8 +33,8 @@ const Footer = () => {
         })}
       </div>
       <div className={styles.copyright}>
-        copyright &copy; gatsby.js-travels luontoretket{" "}
-        {new Date().getFullYear()} Art Bachmann
+        copyright &copy; Developed By Art Bachmann {" "}
+        {new Date().getFullYear()} with Gatsby.js-WordPress-Github-Netlify
       </div>
     </footer>
   )
