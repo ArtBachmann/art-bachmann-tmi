@@ -28,15 +28,15 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     typeName: 'WordPressArt',
-    //     fieldName: 'wordPressArt',
-    //     url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
-    //     refetchInterval: 60
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'WordPressArt',
+        fieldName: 'wordPressArt',
+        url: 'http://test.artbachmann.fi/art-bachmann-tmi/graphql',
+        refetchInterval: 60
+      }
+    },
 
     // {
     //   resolve: 'gatsby-source-wordpress',
@@ -68,7 +68,7 @@ module.exports = {
     //   options: {
     //     url:
     //       process.env.WPGRAPHQL_URL ||
-    //       `http://test.artbachmann.fi/gatsby-wp-henrikwirth/graphql`,
+    //       `http://test.artbachmann.fi/art-bachmann-tmi/graphql`,
     //     verbose: true,
     //     useACF: true,
     //     schema: {
