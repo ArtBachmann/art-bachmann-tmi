@@ -482,7 +482,7 @@ export default function Contact(props) {
           <Grid container direction="column">
             <Grid item>
               <Typography align={matchesMD ? "center" : undefined} variant="h2">
-                Yksinkertainen ohjelmisto.
+                Tavallinen ohjelmisto.
                 <br />
                 Vallankumoukselliset tulokset.
               </Typography>
