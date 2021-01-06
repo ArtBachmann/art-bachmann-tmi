@@ -11,7 +11,7 @@
     "@material-ui/styles": "^4.9.10",
     "@mdi/js": "^5.3.45",
     "@mdi/react": "^1.4.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.29",
     "gatsby-cli": "^2.12.66",
